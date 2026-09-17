@@ -1,0 +1,1849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ZAHID MART</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;font-family:Poppins,Arial,sans-serif;background:#f6f7f9;color:#17191d}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer;border:0}
+img{max-width:100%;display:block}
+.hidden{display:none!important}
+:root{--black:#111318;--line:#e5e7eb;--muted:#727780;--white:#fff;--red:#e63946;--blue:#1d3557;--accent:#ff4d2d;--green:#16a34a}
+body{padding-bottom:76px}
+
+/* WELCOME */
+#welcomeApp{min-height:100vh;background:linear-gradient(135deg,#fff 0%,#f4f7ff 52%,#fff1f2 100%);color:#17191d}
+.w-head{height:70px;display:flex;align-items:center;justify-content:space-between;padding:0 7%;border-bottom:1px solid rgba(0,0,0,.06);background:rgba(255,255,255,.72);backdrop-filter:blur(16px)}
+.w-logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;letter-spacing:.5px}
+.w-logo-mark{width:34px;height:34px;border-radius:10px;background:#111318;color:#fff;display:grid;place-items:center;font-size:14px}
+.w-actions{display:flex;gap:8px}
+.w-btn{height:40px;padding:0 17px;border-radius:9px;background:#111318;color:#fff;font-size:12px;font-weight:600}
+.w-btn.light{background:#fff;color:#111318;border:1px solid #ddd}
+.w-hero{max-width:1100px;margin:auto;padding:75px 25px 55px;display:grid;grid-template-columns:1.05fr .95fr;gap:55px;align-items:center}
+.w-kicker{font-size:11px;letter-spacing:3px;color:#e63946;font-weight:700;text-transform:uppercase}
+.w-hero h1{font-size:clamp(36px,5vw,64px);line-height:1.08;margin:13px 0 18px;letter-spacing:-2px}
+.w-hero h1 span{color:#e63946}
+.w-hero p{font-size:15px;color:#666;line-height:1.8;max-width:550px}
+.w-hero-actions{display:flex;gap:10px;margin-top:25px}
+.w-primary{height:46px;padding:0 23px;border-radius:11px;background:#111318;color:#fff;font-weight:700}
+.w-secondary{height:46px;padding:0 23px;border-radius:11px;background:#fff;color:#111;border:1px solid #ddd;font-weight:600}
+.w-showcase{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.w-showcase img{width:100%;height:190px;object-fit:cover;border-radius:15px}
+.w-showcase img:first-child{height:390px;grid-row:span 2}
+.w-section{max-width:1100px;margin:auto;padding:25px}
+.w-section h2{text-align:center;margin:0;font-size:25px}
+.w-section p{text-align:center;color:#777;font-size:13px}
+.w-features{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:25px}
+.w-feature{background:rgba(255,255,255,.8);border:1px solid #e5e7eb;border-radius:14px;padding:22px;text-align:center}
+.w-icon{width:43px;height:43px;margin:auto;border-radius:12px;background:#111318;color:#fff;display:grid;place-items:center}
+.w-feature strong{display:block;margin-top:12px;font-size:14px}
+.w-feature span{display:block;margin-top:6px;color:#777;font-size:12px;line-height:1.6}
+.w-footer{text-align:center;padding:35px 15px;color:#888;font-size:11px}
+.w-modal{position:fixed;inset:0;z-index:500;background:rgba(0,0,0,.6);display:none;align-items:center;justify-content:center;padding:15px}
+.w-modal.show{display:flex}
+.w-box{width:min(430px,100%);background:#fff;border-radius:17px;padding:25px;box-shadow:0 25px 70px rgba(0,0,0,.2)}
+.w-modal-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
+.w-modal-head strong{font-size:19px}
+.w-close{width:34px;height:34px;border-radius:9px;background:#f1f2f4}
+.w-field{margin-bottom:12px}
+.w-field label{display:block;font-size:11px;color:#666;margin-bottom:6px}
+.w-field input{width:100%;height:43px;border:1px solid #ddd;border-radius:9px;padding:0 12px;outline:none}
+.w-field input:focus{border-color:#111318}
+.pass-wrap{position:relative}
+.pass-wrap input{padding-right:43px}
+.eye{position:absolute;right:7px;top:6px;width:32px;height:31px;background:#f2f3f5;border-radius:7px}
+.w-submit{width:100%;height:44px;border-radius:10px;background:#111318;color:#fff;font-weight:700;margin-top:5px}
+.w-switch{text-align:center;margin-top:15px;color:#777;font-size:12px}
+.w-switch button{background:none;color:#e63946;font-weight:700}
+
+/* STORE */
+#userApp{background:#f6f7f9}
+.brand-bar{width:100%;background:#fff;border-bottom:1px solid var(--line);padding:14px 18px 10px;text-align:center}
+.brand-name{font-size:32px;font-weight:900;letter-spacing:2px;line-height:1.1}
+.brand-name .zahid{color:var(--red)}
+.brand-name .mart{color:var(--blue)}
+.brand-tagline{font-size:11px;color:var(--muted);letter-spacing:3px;margin-top:4px;text-transform:uppercase}
+.header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.header-inner{max-width:1180px;margin:auto;height:64px;display:flex;align-items:center;gap:18px;padding:0 18px}
+.logo{display:flex;align-items:center;gap:9px;font-weight:800;font-size:18px;white-space:nowrap}
+.logo-mark{width:28px;height:28px;border-radius:9px;background:#111318;color:#fff;display:grid;place-items:center;font-size:13px}
+.search-wrap{flex:1;max-width:620px;margin:auto;position:relative}
+.search-wrap input{width:100%;height:42px;border:1px solid var(--line);background:#f7f8fa;border-radius:12px;outline:none;padding:0 45px 0 15px}
+.search-icon{position:absolute;right:14px;top:50%;transform:translateY(-50%);color:#777}
+.header-card{position:relative;width:42px;height:42px;border:1px solid var(--line);background:#fff;border-radius:12px;display:grid;place-items:center}
+.badge{position:absolute;top:-5px;right:-5px;min-width:18px;height:18px;border-radius:20px;background:var(--accent);color:#fff;font-size:10px;display:grid;place-items:center;padding:0 4px}
+.page{max-width:1180px;margin:auto;padding:20px 18px}
+.slider{position:relative;width:100%;height:190px;overflow:hidden;border-radius:16px;background:#ddd}
+.slides{height:100%;position:relative}
+.slide{position:absolute;inset:0;opacity:0;pointer-events:none;transition:opacity .45s}
+.slide.active{opacity:1;pointer-events:auto}
+.slide img{width:100%;height:100%;object-fit:cover}
+.slide-link{position:absolute;inset:0}
+.slider-arrow{position:absolute;top:50%;transform:translateY(-50%);width:38px;height:38px;border-radius:50%;background:rgba(0,0,0,.38);color:#fff;display:grid;place-items:center;z-index:5;font-size:22px}
+.slider-arrow.prev{left:12px}.slider-arrow.next{right:12px}
+.slider-dots{position:absolute;bottom:11px;left:50%;transform:translateX(-50%);display:flex;gap:6px;z-index:5}
+.dot{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.55);transition:.25s}
+.dot.active{width:20px;border-radius:10px;background:#fff}
+.section{margin-top:25px}
+.section-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:13px}
+.section-head h2{margin:0;font-size:20px}
+.muted{color:var(--muted);font-size:13px}
+.categories{display:flex;gap:10px;overflow:auto;scrollbar-width:none}
+.categories::-webkit-scrollbar{display:none}
+.category{flex:0 0 auto;padding:10px 16px;border:1px solid var(--line);background:#fff;border-radius:11px;font-size:13px}
+.category.active{background:#111318;color:#fff;border-color:#111318}
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.product{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;transition:.2s;cursor:pointer}
+.product:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(0,0,0,.07)}
+.product-img{aspect-ratio:1;background:#f2f3f5;overflow:hidden}
+.product-img img{width:100%;height:100%;object-fit:cover}
+.product-body{padding:12px}
+.product-name{font-size:14px;line-height:1.4;min-height:39px}
+.price{margin-top:7px;font-size:17px;font-weight:800}
+.old-price{font-size:12px;color:#999;text-decoration:line-through;margin-left:5px}
+.product-meta{margin-top:6px;color:#777;font-size:11px}
+.product-actions{display:flex;gap:7px;margin-top:10px}
+.small-btn{flex:1;height:35px;border-radius:9px;background:#f0f1f3;font-size:12px}
+.buy-btn{background:#111318;color:#fff}
+.empty{text-align:center;background:#fff;border:1px solid var(--line);border-radius:14px;padding:45px 20px;color:#777}
+.bottom-nav{position:fixed;z-index:100;bottom:0;left:0;right:0;height:66px;background:rgba(255,255,255,.97);backdrop-filter:blur(15px);border-top:1px solid var(--line);display:flex;justify-content:center}
+.nav-inner{width:100%;max-width:500px;display:flex}
+.nav-item{flex:1;background:none;color:#777;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;font-size:11px}
+.nav-item.active{color:#111318;font-weight:700}
+.nav-icon{width:20px;height:20px}
+
+/* FLOATING LIVE CHAT */
+.float-chat{position:fixed;right:16px;bottom:82px;z-index:120;display:flex;flex-direction:column;align-items:flex-end;gap:10px}
+.float-chat.welcome-mode{bottom:20px}
+.chat-fab{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;box-shadow:0 8px 24px rgba(37,211,102,.4);display:grid;place-items:center;font-size:22px;position:relative}
+.chat-fab.pulse:after{content:"";position:absolute;inset:-4px;border-radius:50%;border:2px solid #25D366;animation:pulse 1.6s infinite}
+@keyframes pulse{0%{transform:scale(.9);opacity:.8}100%{transform:scale(1.25);opacity:0}}
+.chat-menu{display:flex;flex-direction:column;gap:8px;align-items:flex-end;transform-origin:bottom right;transition:.2s;transform:scale(.6);opacity:0;pointer-events:none}
+.chat-menu.show{transform:scale(1);opacity:1;pointer-events:auto}
+.chat-menu-item{display:flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:30px;padding:8px 14px 8px 8px;box-shadow:0 6px 20px rgba(0,0,0,.12);font-size:13px;font-weight:700;color:#111;text-decoration:none;transition:.15s}
+.chat-menu-item:hover{transform:translateY(-2px);box-shadow:0 10px 25px rgba(0,0,0,.16)}
+.chat-menu-item .ci{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;color:#fff;font-size:17px}
+.ci-wa{background:#25D366}
+.ci-tg{background:#229ED9}
+
+/* DETAILS */
+.detail-top{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+.back-btn{width:38px;height:38px;border:1px solid var(--line);background:#fff;border-radius:10px;display:grid;place-items:center}
+.detail{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.gallery,.detail-info,.panel,.profile-card,.profile-menu,.settings-card,.order-card{background:#fff;border:1px solid var(--line);border-radius:15px}
+.gallery{padding:14px}
+.main-image{width:100%;aspect-ratio:1;object-fit:contain;border-radius:12px;background:#f5f5f5}
+.thumbs{display:flex;gap:9px;margin-top:10px;flex-wrap:wrap}
+.thumb{width:68px;height:68px;border-radius:9px;overflow:hidden;border:2px solid transparent;padding:0;background:#f2f2f2}
+.thumb.active{border-color:#111318}
+.thumb img{width:100%;height:100%;object-fit:cover}
+.detail-info{padding:22px}
+.detail-info h1{margin:0;font-size:25px;line-height:1.3}
+.rating{margin-top:10px;color:#555;font-size:13px}
+.detail-price{margin-top:17px;font-size:28px;font-weight:850}
+.detail-old{color:#999;text-decoration:line-through;font-size:14px;margin-left:8px}
+.stock{margin-top:10px;font-size:13px;color:#198754}
+.description{margin-top:20px;padding-top:18px;border-top:1px solid var(--line);color:#60646b;font-size:14px;line-height:1.7}
+.qty-row{display:flex;align-items:center;gap:12px;margin-top:20px}
+.qty{display:flex;align-items:center;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.qty button{width:35px;height:35px;background:#f4f4f5}
+.qty span{width:38px;text-align:center;font-size:13px}
+.detail-actions{display:flex;gap:10px;margin-top:18px}
+.primary,.secondary{height:45px;border-radius:11px;padding:0 20px;font-weight:700}
+.primary{background:#111318;color:#fff}
+.secondary{background:#f0f1f3;color:#111}
+
+/* CART */
+.card-list{display:flex;flex-direction:column;gap:10px}
+.card-item{display:grid;grid-template-columns:75px 1fr auto;gap:12px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:13px;padding:10px}
+.card-item img{width:75px;height:75px;object-fit:cover;border-radius:9px}
+.card-name{font-size:14px;font-weight:700}.card-price{margin-top:5px;font-weight:800}
+.remove{color:#b42318;font-size:12px;background:none}
+.summary{margin-top:16px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:17px}
+.sum-row{display:flex;justify-content:space-between;padding:7px 0;color:#62666e;font-size:13px}
+.sum-row.total{border-top:1px solid var(--line);margin-top:8px;padding-top:13px;color:#111;font-size:17px;font-weight:800}
+
+/* PROFILE */
+.profile-card{padding:20px}
+.profile-head{display:flex;align-items:center;gap:15px}
+.avatar{width:64px;height:64px;border-radius:50%;background:#111318;color:#fff;display:grid;place-items:center;font-size:22px;font-weight:800}
+.profile-name{font-size:19px;font-weight:800}.profile-email{color:#777;font-size:12px;margin-top:4px}
+.profile-info{margin-top:20px;display:grid;gap:11px}
+.info{display:flex;justify-content:space-between;gap:20px;padding:11px 0;border-bottom:1px solid #eee;font-size:13px}
+.info span:last-child{color:#666;text-align:right}
+.profile-menu{margin-top:15px;overflow:hidden}
+.menu-btn{width:100%;min-height:50px;background:#fff;border-bottom:1px solid #eee;padding:0 15px;display:flex;align-items:center;justify-content:space-between;font-size:14px}
+.menu-btn:last-child{border-bottom:0}
+.balance-box{margin-top:14px;padding:14px;background:linear-gradient(135deg,#f0fdf4,#dcfce7);border:1px solid #bbf7d0;border-radius:12px;font-size:12px;color:#166534;line-height:1.6}
+
+/* SETTINGS */
+.settings-card{padding:18px;margin-bottom:14px}
+.settings-card h3{margin:0 0 14px;font-size:16px}
+.settings-field{display:flex;gap:10px;align-items:flex-end}
+.settings-field .input-wrap{flex:1}
+.settings-field label{display:block;font-size:12px;color:#666;margin-bottom:6px}
+.settings-field input{width:100%;border:1px solid var(--line);border-radius:9px;padding:11px;outline:none;background:#fff}
+.update-btn{height:42px;padding:0 18px;border-radius:9px;background:#111318;color:#fff;font-weight:700;font-size:13px}
+.address-list{display:flex;flex-direction:column;gap:10px}
+.address-item{display:flex;gap:10px;align-items:flex-start;border:1px solid var(--line);border-radius:12px;padding:12px;background:#fafbfc;cursor:pointer}
+.address-item.selected{border-color:#111318;background:#f5f5f5;box-shadow:0 0 0 1px #111318 inset}
+.address-radio{width:20px;height:20px;border-radius:50%;border:2px solid #bbb;flex:none;margin-top:2px;display:grid;place-items:center;background:#fff}
+.address-item.selected .address-radio{border-color:#111318}
+.address-item.selected .address-radio:after{content:"";width:10px;height:10px;border-radius:50%;background:#111318}
+.address-text{flex:1;font-size:13px;line-height:1.5;color:#333}
+.selected-tag{display:inline-block;font-size:10px;color:#fff;background:#111318;border-radius:20px;padding:2px 8px;margin-left:6px}
+.address-remove{background:none;color:#b42318;font-size:12px;padding:4px 6px}
+.add-address-btn{width:100%;height:44px;border:1px dashed #bbb;background:#fff;border-radius:11px;font-size:13px;color:#333;font-weight:700}
+.add-address-form{display:none;margin-top:12px;padding:14px;border:1px solid var(--line);border-radius:12px;background:#fafbfc}
+.add-address-form.show{display:block}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.form-group{display:flex;flex-direction:column}
+.form-group.full{grid-column:1/-1}
+.form-group label{font-size:11px;color:#666;margin-bottom:5px;font-weight:600}
+.form-group input,.form-group select,.form-group textarea{width:100%;border:1px solid var(--line);border-radius:9px;padding:10px 12px;outline:none;background:#fff;font-size:13px}
+.form-group textarea{min-height:70px;resize:vertical}
+
+/* ORDERS */
+.order-card{padding:16px;margin-bottom:12px}
+.order-head{display:flex;justify-content:space-between;gap:15px}
+.order-id{font-weight:800;font-size:14px}
+.status{font-size:11px;padding:5px 9px;border-radius:20px;background:#eef1f4;font-weight:700;white-space:nowrap}
+.status.placed{background:#e0e7ff;color:#3730a3}
+.status.confirmed{background:#dbeafe;color:#1e40af}
+.status.processing{background:#fef3c7;color:#92400e}
+.status.shipping{background:#cffafe;color:#0e7490}
+.status.delivery{background:#e0f2fe;color:#075985}
+.status.delivered{background:#dcfce7;color:#166534}
+.status.cancelled{background:#fee2e2;color:#991b1b}
+.order-meta{margin-top:8px;color:#777;font-size:12px}
+.order-product{display:flex;gap:10px;margin-top:14px;padding-top:12px;border-top:1px solid #eee}
+.order-product img{width:55px;height:55px;object-fit:cover;border-radius:8px}
+.order-product-name{font-size:13px;font-weight:700}
+.order-product-meta{font-size:12px;color:#777;margin-top:4px}
+.notification{margin-top:14px;padding:11px;border-radius:9px;background:#f5f6f7;font-size:12px;color:#555}
+.order-actions{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+.order-btn{flex:1;min-height:38px;border-radius:10px;font-size:12px;font-weight:700;padding:0 12px}
+.order-btn.view{background:#111318;color:#fff}
+.order-btn.cancel{background:#fff;color:#b42318;border:1px solid #fca5a5}
+
+/* ORDER DETAILS */
+.order-detail-wrap{max-width:720px;margin:0 auto}
+.od-panel{background:#fff;border:1px solid var(--line);border-radius:15px;padding:18px;margin-bottom:14px}
+.od-panel h3{margin:0 0 12px;font-size:15px;display:flex;align-items:center;gap:8px}
+.od-panel h3 .icon{width:26px;height:26px;border-radius:8px;background:#f0f1f3;display:grid;place-items:center;font-size:14px}
+.od-row{display:flex;justify-content:space-between;padding:8px 0;font-size:13px;color:#666}
+.od-row strong{color:#111;text-align:right;max-width:60%}
+.od-divider{height:1px;background:#eee;margin:8px 0}
+.od-total{display:flex;justify-content:space-between;padding:12px 0 0;font-size:16px;font-weight:900;border-top:1px solid #eee;margin-top:8px}
+.od-paid{color:#16a34a}
+.od-due{color:#dc2626}
+.od-pill{display:inline-block;padding:5px 10px;border-radius:20px;font-size:11px;font-weight:800}
+.od-pill.green{background:#dcfce7;color:#166534}
+.od-pill.amber{background:#fef3c7;color:#92400e}
+.od-pill.red{background:#fee2e2;color:#991b1b}
+.od-pill.gray{background:#f3f4f6;color:#4b5563}
+.od-item{display:grid;grid-template-columns:60px 1fr auto;gap:12px;align-items:center;padding:10px 0;border-bottom:1px solid #f1f1f1}
+.od-item:last-child{border-bottom:0}
+.od-item img{width:60px;height:60px;object-fit:cover;border-radius:9px}
+.od-item-name{font-size:13px;font-weight:700}
+.od-item-meta{font-size:11px;color:#777;margin-top:4px}
+.od-item-price{font-size:14px;font-weight:800;text-align:right}
+
+/* CHECKOUT */
+.checkout-wrap{width:100%;max-width:100%;margin:0}
+.checkout-grid{display:grid;grid-template-columns:1fr;gap:14px}
+.panel{padding:18px;border-radius:15px;width:100%;max-width:100%}
+.panel h3{margin:0 0 14px;font-size:15px;display:flex;align-items:center;gap:8px}
+.panel h3 .icon{width:26px;height:26px;border-radius:8px;background:#f0f1f3;display:grid;place-items:center;font-size:14px}
+.field{margin-bottom:12px}
+.field label{display:block;font-size:12px;color:#666;margin-bottom:6px}
+.field input,.field textarea,.field select{width:100%;border:1px solid var(--line);border-radius:9px;padding:11px;outline:none;background:#fff}
+
+.address-select-list{display:flex;flex-direction:column;gap:10px}
+.address-card{border:2px solid var(--line);border-radius:12px;padding:13px;cursor:pointer;transition:.15s;background:#fff}
+.address-card:hover{border-color:#bbb}
+.address-card.selected{border-color:#111318;background:#fafafa;box-shadow:0 0 0 3px rgba(17,19,24,.08)}
+.address-card-top{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.address-card-radio{width:18px;height:18px;border-radius:50%;border:2px solid #bbb;flex:none;display:grid;place-items:center;background:#fff}
+.address-card.selected .address-card-radio{border-color:#111318}
+.address-card.selected .address-card-radio:after{content:"";width:9px;height:9px;border-radius:50%;background:#111318}
+.address-card-type{font-size:11px;font-weight:800;background:#f0f1f3;padding:3px 9px;border-radius:20px}
+.address-card.selected .address-card-type{background:#111318;color:#fff}
+.address-card-name{font-size:13px;font-weight:700}
+.address-card-body{font-size:12px;color:#666;line-height:1.6;margin-left:28px}
+
+.payment-list{display:flex;flex-direction:column;gap:8px}
+.pay-group-label{font-size:11px;color:#777;margin:8px 0 4px 4px;font-weight:700;text-transform:uppercase;letter-spacing:.5px}
+.payment-card{border:2px solid var(--line);border-radius:12px;padding:13px;cursor:pointer;display:flex;align-items:center;gap:11px;transition:.15s;background:#fff}
+.payment-card:hover{border-color:#bbb}
+.payment-card.selected{border-color:#111318;background:#fafafa;box-shadow:0 0 0 3px rgba(17,19,24,.08)}
+.payment-card-radio{width:18px;height:18px;border-radius:50%;border:2px solid #bbb;flex:none;display:grid;place-items:center;background:#fff}
+.payment-card.selected .payment-card-radio{border-color:#111318}
+.payment-card.selected .payment-card-radio:after{content:"";width:9px;height:9px;border-radius:50%;background:#111318}
+.payment-icon{font-size:18px}
+.payment-info{flex:1}
+.payment-name{font-size:13px;font-weight:700}
+
+.pay-option-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:6px}
+.pay-option{border:2px solid var(--line);border-radius:14px;padding:18px;cursor:pointer;text-align:center;transition:.15s;background:#fff}
+.pay-option:hover{border-color:#bbb}
+.pay-option.selected{border-color:#111318;background:#fafafa;box-shadow:0 0 0 3px rgba(17,19,24,.08)}
+.pay-option-icon{width:48px;height:48px;margin:0 auto 10px;border-radius:50%;background:#f0f1f3;display:grid;place-items:center;font-size:22px}
+.pay-option.selected .pay-option-icon{background:#111318;color:#fff}
+.pay-option-title{font-size:14px;font-weight:800;margin-bottom:4px}
+.pay-option-sub{font-size:11px;color:#777;line-height:1.5}
+.pay-option-price{margin-top:10px;font-size:18px;font-weight:900;color:#111}
+
+.pay-info-box{background:linear-gradient(135deg,#111318,#1d3557);color:#fff;border-radius:14px;padding:20px;text-align:center}
+.pay-info-box .label{font-size:11px;opacity:.75;letter-spacing:1px;text-transform:uppercase}
+.pay-info-box .number{font-size:26px;font-weight:900;letter-spacing:1px;margin:10px 0}
+.pay-info-box .type{font-size:13px;opacity:.85}
+.pay-steps{margin-top:20px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px}
+.pay-step{display:flex;gap:12px;margin-bottom:16px}
+.pay-step:last-child{margin-bottom:0}
+.pay-step-num{width:28px;height:28px;border-radius:50%;background:#111318;color:#fff;font-size:12px;font-weight:800;display:grid;place-items:center;flex:none}
+.pay-step-text{font-size:13px;line-height:1.6;color:#333}
+.pay-step-text strong{color:#111}
+.trx-box{margin-top:16px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px}
+.trx-box label{font-size:12px;color:#666;display:block;margin-bottom:8px;font-weight:600}
+.trx-box input{width:100%;border:1px solid var(--line);border-radius:9px;padding:13px;outline:none;background:#fafbfc;font-size:14px;letter-spacing:1px;text-transform:uppercase}
+.trx-box input:focus{border-color:#111318;background:#fff}
+
+.success{text-align:center;background:#fff;border:1px solid var(--line);border-radius:15px;padding:50px 20px;max-width:500px;margin:0 auto}
+.success-icon{width:64px;height:64px;border-radius:50%;background:#111318;color:#fff;display:grid;place-items:center;margin:auto;font-size:30px}
+.success h2{margin:18px 0 6px;font-size:22px}
+.success .big-id{margin-top:14px;font-size:20px;font-weight:900;letter-spacing:1px}
+.success-meta{margin-top:20px;background:#fafbfc;border-radius:12px;padding:14px;text-align:left;font-size:12px}
+.success-meta div{display:flex;justify-content:space-between;padding:7px 0;color:#666}
+.success-meta div strong{color:#111}
+
+.modal{position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.6);display:none;align-items:center;justify-content:center;padding:15px}
+.modal.show{display:flex}
+.modal-box{width:min(520px,100%);max-height:90vh;overflow:auto;background:#fff;border-radius:15px;padding:20px}
+.modal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px}
+.close{width:35px;height:35px;border-radius:9px;background:#f0f1f3}
+.toast{position:fixed;z-index:300;left:50%;bottom:82px;transform:translateX(-50%) translateY(20px);background:#111318;color:#fff;padding:11px 16px;border-radius:9px;font-size:12px;opacity:0;pointer-events:none;transition:.25s}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+@media(max-width:900px){.products{grid-template-columns:repeat(3,1fr)}.w-hero{grid-template-columns:1fr;gap:30px}}
+@media(max-width:700px){
+  .w-head{padding:0 15px}.w-logo{font-size:16px}.w-actions .light{display:none}
+  .w-hero{padding:50px 18px 35px}.w-hero h1{font-size:40px}
+  .w-showcase img{height:130px}.w-showcase img:first-child{height:270px}
+  .w-features{grid-template-columns:1fr}
+  .brand-name{font-size:26px;letter-spacing:1.5px}
+  .brand-bar{padding:12px 12px 8px}.header-inner{height:58px;gap:9px}
+  .logo{font-size:16px}.logo-mark{width:26px;height:26px}.header-card{width:38px;height:38px}
+  .search-wrap input{height:38px}.page{padding:14px 12px}
+  .slider{height:135px;border-radius:13px}.products{grid-template-columns:repeat(2,1fr);gap:9px}
+  .product-body{padding:9px}.product-name{font-size:12px;min-height:34px}.price{font-size:15px}
+  .product-actions .small-btn{font-size:10px;height:32px}
+  .detail{grid-template-columns:1fr;gap:12px}.detail-info h1{font-size:20px}.detail-price{font-size:24px}
+  .settings-field{flex-direction:column;align-items:stretch}.update-btn{width:100%}
+  .form-grid{grid-template-columns:1fr}.form-group.full{grid-column:auto}
+  .pay-option-grid{grid-template-columns:1fr}
+  .pay-info-box .number{font-size:22px}
+  .panel{padding:15px}
+  .float-chat{right:12px;bottom:78px}
+  .float-chat.welcome-mode{bottom:16px}
+  .chat-fab{width:48px;height:48px;font-size:20px}
+}
+@media(max-width:380px){.logo{display:none}.search-wrap{max-width:none}.brand-name{font-size:22px}}
+</style>
+</head>
+<body>
+
+<!-- WELCOME -->
+<div id="welcomeApp">
+<header class="w-head">
+<div class="w-logo"><div class="w-logo-mark">Z</div>ZAHID MART</div>
+<div class="w-actions">
+<button class="w-btn light" onclick="openWelcomeModal('login')">Login</button>
+<button class="w-btn" onclick="openWelcomeModal('register')">Register</button>
+</div>
+</header>
+<section class="w-hero">
+<div>
+<div class="w-kicker">Trusted Online Shopping</div>
+<h1>Shop smarter with <span>ZAHID MART</span></h1>
+<p>Discover products, manage your orders and enjoy a simple online shopping experience designed for everyday shopping.</p>
+<div class="w-hero-actions">
+<button class="w-primary" onclick="openWelcomeModal('login')">Start Shopping</button>
+<button class="w-secondary" onclick="openWelcomeModal('register')">Create Account</button>
+</div>
+</div>
+<div class="w-showcase">
+<img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=900" alt="">
+<img src="https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=900" alt="">
+<img src="https://images.unsplash.com/photo-1607082349566-187342175e2f?w=900" alt="">
+</div>
+</section>
+<section class="w-section">
+<h2>Everything you need to shop</h2>
+<p>A clean and simple shopping experience.</p>
+<div class="w-features">
+<div class="w-feature"><div class="w-icon">S</div><strong>Easy Shopping</strong><span>Browse products and find what you need quickly.</span></div>
+<div class="w-feature"><div class="w-icon">C</div><strong>Simple Checkout</strong><span>Add products to your Card and place your order easily.</span></div>
+<div class="w-feature"><div class="w-icon">O</div><strong>Order Tracking</strong><span>Keep track of your orders from your profile.</span></div>
+</div>
+</section>
+<div class="w-footer">© 2026 ZAHID MART. All rights reserved.</div>
+</div>
+
+<!-- WELCOME AUTH MODAL -->
+<div class="w-modal" id="welcomeModal">
+<div class="w-box">
+<div class="w-modal-head"><strong id="welcomeTitle">Login</strong><button class="w-close" onclick="closeWelcomeModal()">×</button></div>
+<form id="loginForm" onsubmit="loginUser(event)">
+<div class="w-field"><label>Email or Phone</label><input id="loginIdentity" required></div>
+<div class="w-field"><label>Password</label><div class="pass-wrap"><input id="loginPassword" type="password" required><button type="button" class="eye" onclick="togglePass('loginPassword',this)">○</button></div></div>
+<button class="w-submit">Login</button>
+<div class="w-switch">Don't have an account? <button type="button" onclick="openWelcomeModal('register')">Create Account</button></div>
+</form>
+<form id="registerForm" class="hidden" onsubmit="registerUser(event)">
+<div class="w-field"><label>Full Name</label><input id="regName" required></div>
+<div class="w-field"><label>Email</label><input id="regEmail" type="email" required></div>
+<div class="w-field"><label>Phone</label><input id="regPhone" required></div>
+<div class="w-field"><label>Password</label><div class="pass-wrap"><input id="regPassword" type="password" minlength="6" required><button type="button" class="eye" onclick="togglePass('regPassword',this)">○</button></div></div>
+<div class="w-field"><label>Confirm Password</label><div class="pass-wrap"><input id="regConfirm" type="password" minlength="6" required><button type="button" class="eye" onclick="togglePass('regConfirm',this)">○</button></div></div>
+<button class="w-submit">Create Account</button>
+<div class="w-switch">Already have an account? <button type="button" onclick="openWelcomeModal('login')">Login</button></div>
+</form>
+</div>
+</div>
+
+<!-- MAIN APP -->
+<div id="userApp" class="hidden">
+<div class="brand-bar">
+<div class="brand-name"><span class="zahid">ZAHID</span> <span class="mart">MART</span></div>
+<div class="brand-tagline">Trusted Online Shopping</div>
+</div>
+<header class="header">
+<div class="header-inner">
+<div class="logo"><div class="logo-mark">Z</div>ZAHID MART</div>
+<div class="search-wrap" id="homeSearch">
+<input id="searchInput" type="search" placeholder="Search products..." oninput="handleSearch(this.value)">
+<div class="search-icon">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+</div>
+</div>
+<button class="header-card" onclick="go('card')">
+<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 4h2l2.2 11.2a2 2 0 0 0 2 1.6h7.9a2 2 0 0 0 1.9-1.5L21 8H6"/><circle cx="10" cy="20" r="1"/><circle cx="18" cy="20" r="1"/></svg>
+<span class="badge" id="cardBadge">0</span>
+</button>
+</div>
+</header>
+
+<main>
+<section id="homePage" class="page">
+<div class="slider">
+<div class="slides" id="slides"></div>
+<button class="slider-arrow prev" onclick="prevSlide()">‹</button>
+<button class="slider-arrow next" onclick="nextSlide()">›</button>
+<div class="slider-dots" id="sliderDots"></div>
+</div>
+<div class="section">
+<div class="section-head"><h2>Categories</h2></div>
+<div class="categories" id="categories"></div>
+</div>
+<div class="section">
+<div class="section-head"><h2 id="productTitle">Products</h2><span class="muted" id="productCount"></span></div>
+<div class="products" id="products"></div>
+</div>
+</section>
+
+<section id="detailsPage" class="page hidden">
+<div class="detail-top"><button class="back-btn" onclick="go('home')">←</button><strong>Product Details</strong></div>
+<div id="detailContent"></div>
+</section>
+
+<section id="cardPage" class="page hidden">
+<div class="section-head"><h2>My Card</h2></div>
+<div id="cardContent"></div>
+</section>
+
+<section id="profilePage" class="page hidden">
+<div class="section-head"><h2>Profile</h2></div>
+<div id="profileContent"></div>
+</section>
+
+<section id="settingsPage" class="page hidden">
+<div class="detail-top"><button class="back-btn" onclick="go('profile')">←</button><strong>Profile Settings</strong></div>
+<div id="settingsContent"></div>
+</section>
+
+<section id="ordersPage" class="page hidden">
+<div class="detail-top"><button class="back-btn" onclick="go('profile')">←</button><strong>My Orders</strong></div>
+<div id="ordersContent"></div>
+</section>
+
+<section id="orderDetailPage" class="page hidden">
+<div class="detail-top"><button class="back-btn" onclick="go('orders')">←</button><strong>Order Details</strong></div>
+<div class="order-detail-wrap"><div id="orderDetailContent"></div></div>
+</section>
+
+<section id="checkoutPage" class="page hidden">
+<div class="detail-top"><button class="back-btn" onclick="go('card')">←</button><strong>Checkout</strong></div>
+<div class="checkout-wrap"><div id="checkoutContent"></div></div>
+</section>
+
+<section id="payConfirmPage" class="page hidden">
+<div class="detail-top"><button class="back-btn" onclick="go('checkout')">←</button><strong>Payment Confirmation</strong></div>
+<div class="checkout-wrap"><div id="payConfirmContent"></div></div>
+</section>
+
+<section id="paymentPage" class="page hidden">
+<div class="detail-top"><button class="back-btn" onclick="go('checkout')">←</button><strong>Payment</strong></div>
+<div class="checkout-wrap"><div id="paymentContent"></div></div>
+</section>
+
+<section id="successPage" class="page hidden">
+<div id="successContent"></div>
+</section>
+</main>
+
+<nav class="bottom-nav">
+<div class="nav-inner">
+<button class="nav-item active" id="navHome" onclick="go('home')">
+<svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>Home
+</button>
+<button class="nav-item" id="navCard" onclick="go('card')">
+<svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 4h2l2.2 11.2a2 2 0 0 0 2 1.6h7.9a2 2 0 0 0 1.9-1.5L21 8H6"/><circle cx="10" cy="20" r="1"/><circle cx="18" cy="20" r="1"/></svg>Card
+</button>
+<button class="nav-item" id="navProfile" onclick="go('profile')">
+<svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>Profile
+</button>
+</div>
+</nav>
+</div>
+
+<!-- FLOATING LIVE CHAT -->
+<div id="floatChat" class="float-chat welcome-mode">
+  <div class="chat-menu" id="chatMenu">
+    <a id="chatWhatsApp" class="chat-menu-item" href="#" target="_blank">
+      <span class="ci ci-wa">W</span><span>WhatsApp</span>
+    </a>
+    <a id="chatTelegram" class="chat-menu-item" href="#" target="_blank">
+      <span class="ci ci-tg">T</span><span>Telegram</span>
+    </a>
+  </div>
+  <button class="chat-fab pulse" id="chatFab" onclick="toggleFloatChat()">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+    </svg>
+  </button>
+</div>
+
+<!-- STORE MODAL -->
+<div class="modal" id="modal">
+<div class="modal-box">
+<div class="modal-head"><strong id="modalTitle">Details</strong><button class="close" onclick="closeModal()">×</button></div>
+<div id="modalBody"></div>
+</div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-database-compat.js"></script>
+
+<script>
+/* ============================================================
+   FIREBASE
+============================================================ */
+const firebaseConfig = {
+  apiKey: "AIzaSyBsZRSXC2TSyiVuMq333JYniQktC50doRQ",
+  authDomain: "e-comars-ec5b2.firebaseapp.com",
+  databaseURL: "https://e-comars-ec5b2-default-rtdb.firebaseio.com",
+  projectId: "e-comars-ec5b2",
+  storageBucket: "e-comars-ec5b2.firebasestorage.app",
+  messagingSenderId: "969916007842",
+  appId: "1:969916007842:web:90775ca7718a1d5441defb"
+};
+firebase.initializeApp(firebaseConfig);
+const db = firebase.database();
+
+const STORAGE = { card:"zahidmart_card", profile:"zahidmart_profile", account:"zahidmart_account", session:"zahidmart_session" };
+
+let products = [];
+let sliders = [];
+let settings = {};
+let support = {};
+let popups = [];
+let payments = [];
+let orders = [];
+
+let card = load(STORAGE.card, []);
+let profile = load(STORAGE.profile, { name:"", email:"", phone:"", addresses:[], selectedAddressIndex:0 });
+
+let currentCategory = "All";
+let searchText = "";
+let currentProduct = null;
+let detailQty = 1;
+let sliderIndex = 0;
+let sliderTimer = null;
+let orderRef = null;
+let balanceRef = null;
+let myTotalSpend = 0;
+let currentOrderId = null;
+
+let balanceAvailable = 0;
+let balanceUsed = 0;
+let useBalance = false;
+
+let selectedAddressIndexCheckout = 0;
+let selectedPaymentMethod = null;
+let selectedPaymentOption = "full";
+let pendingOrderData = null;
+
+const CANCEL_HIDE_MS = 2 * 60 * 60 * 1000; // 2 hours
+
+function load(k, f){ try{ let x = localStorage.getItem(k); return x ? JSON.parse(x) : f; } catch(e){ return f; } }
+function save(k, v){ localStorage.setItem(k, JSON.stringify(v)); }
+function money(v){ let cur = settings.currency || "৳"; return cur + Number(v || 0).toLocaleString("en-BD"); }
+function escapeHTML(s){ return String(s ?? "").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#039;"); }
+function toast(t){ let e = document.getElementById("toast"); e.textContent = t; e.classList.add("show"); setTimeout(()=>e.classList.remove("show"), 1800); }
+function formatDate(d){ return new Date(d).toLocaleDateString("en-GB",{ day:"2-digit", month:"short", year:"numeric" }); }
+function formatDateTime(d){ return new Date(d).toLocaleString("en-GB",{ day:"2-digit", month:"short", year:"numeric", hour:"2-digit", minute:"2-digit" }); }
+function getAddressesArr(){ let a = profile.addresses || []; return a.map(x => typeof x === "string" ? { formatted: x } : x); }
+
+/* Auto-hide cancelled orders after 2 hours */
+function isOrderVisible(o){
+  if(o.status === "Cancelled" && o.cancelledAt){
+    let elapsed = Date.now() - Number(o.cancelledAt);
+    if(elapsed > CANCEL_HIDE_MS) return false;
+  }
+  return true;
+}
+function getVisibleOrders(){ return orders.filter(isOrderVisible); }
+
+/* ============================================================
+   REALTIME SYNC
+============================================================ */
+function startRealtimeSync(){
+  db.ref("products").on("value", snap => {
+    let val = snap.val() || {};
+    products = Object.entries(val).map(([id, x]) => {
+      let images = [x.image1, x.image2, x.image3, x.image4, x.image5].filter(Boolean);
+      return { id, ...x, images };
+    });
+    if(!document.getElementById("userApp").classList.contains("hidden")){
+      renderCategories(); renderProducts();
+    }
+  });
+  db.ref("sliders").on("value", snap => {
+    let val = snap.val() || {};
+    sliders = Object.entries(val).map(([id, x]) => ({ id, ...x }));
+    renderSliders();
+  });
+  db.ref("settings").on("value", snap => { settings = snap.val() || {}; });
+  db.ref("support").on("value", snap => {
+    support = snap.val() || {};
+    updateFloatChatLinks();
+  });
+  db.ref("popups").on("value", snap => {
+    let val = snap.val() || {};
+    popups = Object.entries(val).map(([id, x]) => ({ id, ...x })).filter(p => p.active !== false);
+  });
+  db.ref("payments").on("value", snap => {
+    let val = snap.val() || {};
+    payments = Object.entries(val).map(([id, x]) => ({ id, ...x })).filter(p => p.enabled !== false);
+    if(currentPageNow() === "checkout") renderCheckout();
+  });
+}
+
+function startUserOrdersSync(uid){
+  if(orderRef) orderRef.off();
+  orderRef = db.ref("orders").orderByChild("userId").equalTo(uid);
+  orderRef.on("value", snap => {
+    let val = snap.val() || {};
+    orders = Object.entries(val).map(([id, x]) => ({ id, ...x }));
+    orders.sort((a, b) => (b.createdAt || 0) - (a.createdAt || 0));
+    myTotalSpend = orders
+      .filter(o => o.status !== "Cancelled")
+      .reduce((s, o) => s + Number(o.total || 0), 0);
+    if(!document.getElementById("ordersPage").classList.contains("hidden")) renderOrders();
+    if(!document.getElementById("profilePage").classList.contains("hidden")) renderProfile();
+    if(!document.getElementById("orderDetailPage").classList.contains("hidden") && currentOrderId) renderOrderDetail(currentOrderId);
+  });
+
+  if(balanceRef) balanceRef.off();
+  balanceRef = db.ref("users/" + uid);
+  balanceRef.on("value", snap => {
+    let u = snap.val() || {};
+    balanceAvailable = Number(u.balance || 0);
+    let acc = load(STORAGE.account, {});
+    if(acc.uid === uid){
+      acc.balance = balanceAvailable;
+      save(STORAGE.account, acc);
+    }
+    if(!document.getElementById("profilePage").classList.contains("hidden")) renderProfile();
+    if(!document.getElementById("checkoutPage").classList.contains("hidden")) renderCheckout();
+  });
+
+  // Auto-refresh to hide expired cancelled orders
+  if(window.ordersRefreshTimer) clearInterval(window.ordersRefreshTimer);
+  window.ordersRefreshTimer = setInterval(() => {
+    if(!document.getElementById("ordersPage").classList.contains("hidden")) renderOrders();
+    if(!document.getElementById("orderDetailPage").classList.contains("hidden") && currentOrderId){
+      let o = orders.find(x => x.id === currentOrderId);
+      if(o && !isOrderVisible(o)){ toast("This order is no longer available"); go('orders'); }
+    }
+  }, 60000);
+}
+
+/* ============================================================
+   FLOATING LIVE CHAT
+============================================================ */
+function toggleFloatChat(){ document.getElementById("chatMenu").classList.toggle("show"); }
+function updateFloatChatLinks(){
+  let s = support || {};
+  let wa = s.whatsApp || s.whatsapp || "";
+  let tg = s.telegram || "";
+
+  let waEl = document.getElementById("chatWhatsApp");
+  if(wa){
+    let num = wa.replace(/[^0-9]/g, "");
+    if(num.startsWith("0")) num = "880" + num.slice(1);
+    waEl.href = "https://wa.me/" + num;
+    waEl.style.display = "";
+  } else {
+    waEl.style.display = "none";
+  }
+
+  let tgEl = document.getElementById("chatTelegram");
+  if(tg){
+    let link = tg.startsWith("http") ? tg : "https://t.me/" + tg.replace(/^@/, "");
+    tgEl.href = link;
+    tgEl.style.display = "";
+  } else {
+    tgEl.style.display = "none";
+  }
+}
+
+/* ============================================================
+   AUTH
+============================================================ */
+function openWelcomeModal(type){
+  document.getElementById("welcomeModal").classList.add("show");
+  document.getElementById("loginForm").classList.toggle("hidden", type !== "login");
+  document.getElementById("registerForm").classList.toggle("hidden", type !== "register");
+  document.getElementById("welcomeTitle").textContent = type === "login" ? "Login" : "Create Account";
+}
+function closeWelcomeModal(){ document.getElementById("welcomeModal").classList.remove("show"); }
+function togglePass(id, b){ let e = document.getElementById(id); e.type = e.type === "password" ? "text" : "password"; b.textContent = e.type === "password" ? "○" : "●"; }
+
+async function registerUser(e){
+  e.preventDefault();
+  let name = document.getElementById("regName").value.trim();
+  let email = document.getElementById("regEmail").value.trim().toLowerCase();
+  let phone = document.getElementById("regPhone").value.trim();
+  let pass = document.getElementById("regPassword").value;
+  let confirm = document.getElementById("regConfirm").value;
+  if(pass !== confirm){ alert("Passwords do not match"); return; }
+  try {
+    let s1 = await db.ref("users").orderByChild("email").equalTo(email).once("value");
+    if(s1.exists()){ alert("An account with this email already exists"); return; }
+    let s2 = await db.ref("users").orderByChild("phone").equalTo(phone).once("value");
+    if(s2.exists()){ alert("An account with this phone already exists"); return; }
+    let uid = "u-" + Date.now() + "-" + Math.random().toString(36).slice(2, 8);
+    await db.ref("users/" + uid).set({
+      uid, name, email, phone, password: pass,
+      balance: 0, addresses: [], selectedAddressIndex: 0, createdAt: Date.now()
+    });
+    save(STORAGE.account, { uid, name, email, phone, password: pass, balance: 0 });
+    save(STORAGE.session, "1");
+    profile = { name, email, phone, addresses: [], selectedAddressIndex: 0 };
+    save(STORAGE.profile, profile);
+    balanceAvailable = 0;
+    closeWelcomeModal(); showStore(); startUserOrdersSync(uid);
+  } catch(err){ alert(err.message || "Registration failed"); }
+}
+
+async function loginUser(e){
+  e.preventDefault();
+  let identity = document.getElementById("loginIdentity").value.trim().toLowerCase();
+  let pass = document.getElementById("loginPassword").value;
+  try {
+    let userData = null;
+    let snap = await db.ref("users").orderByChild("email").equalTo(identity).once("value");
+    if(snap.exists()){ let first = Object.values(snap.val())[0]; if(first.password === pass) userData = first; }
+    if(!userData){
+      let snap2 = await db.ref("users").orderByChild("phone").equalTo(identity).once("value");
+      if(snap2.exists()){ let first = Object.values(snap2.val())[0]; if(first.password === pass) userData = first; }
+    }
+    if(!userData){ alert("Invalid login details"); return; }
+    save(STORAGE.account, userData);
+    save(STORAGE.session, "1");
+    profile = {
+      name: userData.name || "", email: userData.email || "", phone: userData.phone || "",
+      addresses: userData.addresses || [], selectedAddressIndex: userData.selectedAddressIndex || 0
+    };
+    save(STORAGE.profile, profile);
+    balanceAvailable = Number(userData.balance || 0);
+    closeWelcomeModal(); showStore(); startUserOrdersSync(userData.uid);
+  } catch(err){ alert(err.message || "Login failed"); }
+}
+
+function showStore(){
+  document.getElementById("welcomeApp").classList.add("hidden");
+  document.getElementById("userApp").classList.remove("hidden");
+  document.getElementById("floatChat").classList.remove("welcome-mode");
+  renderCategories(); renderProducts(); renderSliders(); updateBadge(); renderProfile(); startSlider();
+  updateFloatChatLinks();
+}
+function logoutUser(){
+  localStorage.removeItem(STORAGE.session);
+  if(orderRef){ orderRef.off(); orderRef = null; }
+  if(balanceRef){ balanceRef.off(); balanceRef = null; }
+  if(window.ordersRefreshTimer){ clearInterval(window.ordersRefreshTimer); window.ordersRefreshTimer = null; }
+  orders = []; myTotalSpend = 0;
+  balanceAvailable = 0; balanceUsed = 0; useBalance = false;
+  document.getElementById("userApp").classList.add("hidden");
+  document.getElementById("welcomeApp").classList.remove("hidden");
+  document.getElementById("floatChat").classList.add("welcome-mode");
+}
+
+/* ============================================================
+   NAV
+============================================================ */
+function currentPageNow(){
+  let ids = ["homePage","detailsPage","cardPage","profilePage","settingsPage","ordersPage","orderDetailPage","checkoutPage","payConfirmPage","paymentPage","successPage"];
+  for(let id of ids){
+    let el = document.getElementById(id);
+    if(el && !el.classList.contains("hidden")) return id.replace("Page","");
+  }
+  return "home";
+}
+function go(page){
+  document.querySelectorAll("main>section").forEach(s => s.classList.add("hidden"));
+  let t = document.getElementById(page + "Page"); if(t) t.classList.remove("hidden");
+  document.querySelectorAll(".nav-item").forEach(x => x.classList.remove("active"));
+  if(page === "home") document.getElementById("navHome").classList.add("active");
+  if(page === "card") document.getElementById("navCard").classList.add("active");
+  if(page === "profile") document.getElementById("navProfile").classList.add("active");
+  document.getElementById("homeSearch").style.display = page === "home" ? "" : "none";
+  if(page === "card") renderCard();
+  if(page === "profile") renderProfile();
+  if(page === "settings") renderSettings();
+  if(page === "orders") renderOrders();
+  if(page === "orderDetail" && currentOrderId) renderOrderDetail(currentOrderId);
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+/* ============================================================
+   PRODUCTS
+============================================================ */
+function renderCategories(){
+  let cats = ["All", ...new Set(products.map(p => p.category).filter(Boolean))];
+  document.getElementById("categories").innerHTML = cats.map(c =>
+    `<button class="category ${currentCategory === c ? "active" : ""}" onclick="filterCategory('${escapeHTML(c)}')">${escapeHTML(c)}</button>`
+  ).join("");
+}
+function filterCategory(c){ currentCategory = c; renderCategories(); renderProducts(); }
+function handleSearch(v){ searchText = v.toLowerCase().trim(); currentCategory = "All"; renderCategories(); renderProducts(); }
+
+function renderProducts(){
+  let list = products.filter(p =>
+    (currentCategory === "All" || p.category === currentCategory) &&
+    (!searchText || (p.name || "").toLowerCase().includes(searchText) || (p.category || "").toLowerCase().includes(searchText))
+  );
+  document.getElementById("productTitle").textContent = searchText ? "Search Results" : (currentCategory === "All" ? "Products" : currentCategory);
+  document.getElementById("productCount").textContent = list.length + " items";
+  document.getElementById("products").innerHTML = list.length ? list.map(p => `
+    <article class="product" onclick="openProduct('${p.id}')">
+      <div class="product-img"><img src="${escapeHTML(p.images[0] || "")}" alt="${escapeHTML(p.name)}" onerror="this.src='https://via.placeholder.com/600x600?text=Product'"></div>
+      <div class="product-body">
+        <div class="product-name">${escapeHTML(p.name)}</div>
+        <div class="price">${money(p.price)} ${p.oldPrice ? `<span class="old-price">${money(p.oldPrice)}</span>` : ""}</div>
+        <div class="product-meta">${p.rating || 4.5} rating · ${p.stock || 0} in stock</div>
+        <div class="product-actions">
+          <button class="small-btn" onclick="event.stopPropagation();addToCard('${p.id}')">Add to Card</button>
+          <button class="small-btn buy-btn" onclick="event.stopPropagation();buyProduct('${p.id}')">Buy</button>
+        </div>
+      </div>
+    </article>`).join("") : `<div class="empty" style="grid-column:1/-1">No products available.</div>`;
+}
+
+/* ============================================================
+   PRODUCT DETAILS
+============================================================ */
+function openProduct(id){
+  let p = products.find(x => x.id === id); if(!p) return;
+  currentProduct = p; detailQty = 1;
+  document.querySelectorAll("main>section").forEach(s => s.classList.add("hidden"));
+  document.getElementById("detailsPage").classList.remove("hidden");
+  document.getElementById("homeSearch").style.display = "none";
+  renderProductDetails();
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+function renderProductDetails(){
+  let p = currentProduct;
+  let imgs = (p.images || []).filter(Boolean);
+  document.getElementById("detailContent").innerHTML = `
+    <div class="detail">
+      <div class="gallery"><img id="mainProductImage" class="main-image" src="${escapeHTML(imgs[0] || "")}">
+        <div class="thumbs">${imgs.map((x, i) => `<button class="thumb ${i === 0 ? "active" : ""}" onclick="selectDetailImage(${i})"><img src="${escapeHTML(x)}"></button>`).join("")}</div>
+      </div>
+      <div class="detail-info">
+        <h1>${escapeHTML(p.name)}</h1>
+        <div class="rating">${p.rating || 4.5} rating · ${escapeHTML(p.category || "")}</div>
+        <div class="detail-price">${money(p.price)} ${p.oldPrice ? `<span class="detail-old">${money(p.oldPrice)}</span>` : ""}</div>
+        <div class="stock">${p.stock > 0 ? "In Stock" : "Out of Stock"}</div>
+        <div class="description">${escapeHTML(p.description || "No description available.")}</div>
+        <div class="qty-row"><strong>Quantity</strong>
+          <div class="qty"><button onclick="detailChangeQty(-1)">−</button><span id="detailQty">${detailQty}</span><button onclick="detailChangeQty(1)">+</button></div>
+        </div>
+        <div class="detail-actions">
+          <button class="secondary" onclick="addDetailToCard()">Add to Card</button>
+          <button class="primary" onclick="buyDetailProduct()">Buy Now</button>
+        </div>
+      </div>
+    </div>`;
+}
+function selectDetailImage(i){
+  document.getElementById("mainProductImage").src = currentProduct.images[i];
+  document.querySelectorAll(".thumb").forEach((x, n) => x.classList.toggle("active", i === n));
+}
+function detailChangeQty(c){
+  if(!currentProduct.stock) return;
+  detailQty = Math.max(1, Math.min(currentProduct.stock, detailQty + c));
+  document.getElementById("detailQty").textContent = detailQty;
+}
+function addDetailToCard(){ for(let i = 0; i < detailQty; i++) addToCard(currentProduct.id, true); toast("Product added to Card"); }
+function buyDetailProduct(){
+  if(!currentProduct.stock){ toast("Out of stock"); return; }
+  let x = card.find(x => x.id === currentProduct.id);
+  if(x) x.qty = Math.min(currentProduct.stock, x.qty + detailQty);
+  else card.push({ id: currentProduct.id, qty: detailQty });
+  save(STORAGE.card, card); updateBadge(); openCheckout();
+}
+
+/* ============================================================
+   CARD
+============================================================ */
+function addToCard(id, silent = false){
+  let p = products.find(x => x.id === id);
+  if(!p || p.stock < 1){ toast("Out of stock"); return; }
+  let x = card.find(x => x.id === id);
+  if(x){ if(x.qty >= p.stock){ toast("Stock limit reached"); return; } x.qty++; }
+  else card.push({ id, qty: 1 });
+  save(STORAGE.card, card); updateBadge();
+  if(!silent) toast("Added to Card");
+}
+function buyProduct(id){
+  let p = products.find(x => x.id === id);
+  if(!p || !p.stock){ toast("Out of stock"); return; }
+  addToCard(id, true); openCheckout();
+}
+function updateBadge(){ document.getElementById("cardBadge").textContent = card.reduce((s, x) => s + x.qty, 0); }
+
+function renderCard(){
+  if(!card.length){
+    document.getElementById("cardContent").innerHTML = `<div class="empty"><strong>Your Card is empty</strong><div style="margin-top:7px">Add products from Home.</div></div>`;
+    return;
+  }
+  let subtotal = 0;
+  let html = card.map(x => {
+    let p = products.find(y => y.id === x.id); if(!p) return "";
+    subtotal += p.price * x.qty;
+    return `
+      <div class="card-item">
+        <img src="${escapeHTML(p.images[0] || "")}">
+        <div>
+          <div class="card-name">${escapeHTML(p.name)}</div>
+          <div class="card-price">${money(p.price * x.qty)}</div>
+          <div class="qty" style="margin-top:7px;width:max-content">
+            <button onclick="changeQty('${p.id}',-1)">−</button>
+            <span>${x.qty}</span>
+            <button onclick="changeQty('${p.id}',1)">+</button>
+          </div>
+        </div>
+        <button class="remove" onclick="removeFromCard('${p.id}')">Remove</button>
+      </div>`;
+  }).join("");
+  let delivery = getDeliveryCharge(subtotal);
+  let total = subtotal + delivery;
+  document.getElementById("cardContent").innerHTML = `
+    <div class="card-list">${html}</div>
+    <div class="summary">
+      <div class="sum-row"><span>Subtotal</span><strong>${money(subtotal)}</strong></div>
+      <div class="sum-row"><span>Delivery</span><strong>${delivery ? money(delivery) : "Free"}</strong></div>
+      <div class="sum-row total"><span>Total</span><strong>${money(total)}</strong></div>
+      <button class="primary" style="width:100%;margin-top:13px" onclick="openCheckout()">Checkout</button>
+    </div>`;
+}
+function getDeliveryCharge(subtotal){
+  let freeAbove = Number(settings.freeDelivery || 1000);
+  let charge = Number(settings.deliveryCharge != null ? settings.deliveryCharge : 60);
+  return subtotal >= freeAbove ? 0 : charge;
+}
+function changeQty(id, c){
+  let x = card.find(y => y.id === id), p = products.find(y => y.id === id);
+  if(!x || !p) return;
+  x.qty += c;
+  if(x.qty > p.stock) x.qty = p.stock;
+  if(x.qty <= 0) card = card.filter(y => y.id !== id);
+  save(STORAGE.card, card); updateBadge(); renderCard();
+}
+function removeFromCard(id){ card = card.filter(x => x.id !== id); save(STORAGE.card, card); updateBadge(); renderCard(); toast("Removed from Card"); }
+
+/* ============================================================
+   CHECKOUT
+============================================================ */
+function getCartSubtotal(){
+  return card.reduce((s, x) => {
+    let p = products.find(y => y.id === x.id);
+    return s + (p ? p.price * x.qty : 0);
+  }, 0);
+}
+
+function openCheckout(){
+  if(!card.length){ toast("Your Card is empty"); return; }
+  document.querySelectorAll("main>section").forEach(s => s.classList.add("hidden"));
+  document.getElementById("checkoutPage").classList.remove("hidden");
+  document.getElementById("homeSearch").style.display = "none";
+  selectedAddressIndexCheckout = profile.selectedAddressIndex || 0;
+  if(payments.length) selectedPaymentMethod = payments[0].name;
+  else selectedPaymentMethod = "Cash on Delivery";
+  useBalance = false;
+  balanceUsed = 0;
+  renderCheckout();
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+function renderCheckout(){
+  let subtotal = getCartSubtotal();
+  let delivery = getDeliveryCharge(subtotal);
+  let preBalance = subtotal + delivery;
+
+  if(useBalance && balanceAvailable > 0){
+    balanceUsed = Math.min(balanceAvailable, preBalance);
+  } else {
+    balanceUsed = 0;
+  }
+  let total = Math.max(0, preBalance - balanceUsed);
+
+  let addrs = getAddressesArr();
+  if(!addrs.length){
+    addrs = [{
+      type: "Home", name: profile.name || "", phone: profile.phone || "",
+      street: "", city: "", state: "", zip: "", country: "", fullAddress: "",
+      formatted: "No address saved. Please add address from Profile Settings."
+    }];
+  }
+  if(selectedAddressIndexCheckout >= addrs.length) selectedAddressIndexCheckout = 0;
+
+  let groups = {
+    mobile: payments.filter(p => (p.category || "mobile") === "mobile"),
+    card: payments.filter(p => p.category === "card"),
+    bank: payments.filter(p => p.category === "bank")
+  };
+  let payHTML = "";
+  if(!payments.length){
+    selectedPaymentMethod = "Cash on Delivery";
+    payHTML = `<div class="payment-card selected">
+      <div class="payment-card-radio"></div>
+      <div class="payment-icon">💰</div>
+      <div class="payment-info"><div class="payment-name">Cash on Delivery</div></div>
+    </div>`;
+  } else {
+    if(groups.mobile.length){ payHTML += `<div class="pay-group-label">📱 Mobile Wallet</div>`; payHTML += groups.mobile.map(p => paymentCardHTML(p)).join(""); }
+    if(groups.card.length){ payHTML += `<div class="pay-group-label">💳 Card</div>`; payHTML += groups.card.map(p => paymentCardHTML(p)).join(""); }
+    if(groups.bank.length){ payHTML += `<div class="pay-group-label">🏦 Banking</div>`; payHTML += groups.bank.map(p => paymentCardHTML(p)).join(""); }
+  }
+
+  let balanceBlock = "";
+  if(balanceAvailable > 0){
+    balanceBlock = `
+      <div class="panel" style="border:1px solid #bbf7d0;background:#f0fdf4">
+        <h3 style="color:#166534"><span class="icon" style="background:#dcfce7">💰</span>Wallet Balance</h3>
+        <label style="display:flex;align-items:center;gap:10px;cursor:pointer;font-size:13px;color:#166534;font-weight:600">
+          <input type="checkbox" ${useBalance ? "checked" : ""} onchange="toggleUseBalance(this.checked)" style="width:18px;height:18px;cursor:pointer">
+          Use my balance <strong>${money(balanceAvailable)}</strong> on this order
+        </label>
+        ${useBalance ? `<div style="font-size:12px;color:#166534;margin-top:8px">✓ Applying <strong>${money(balanceUsed)}</strong> from wallet</div>` : ""}
+      </div>`;
+  }
+
+  document.getElementById("checkoutContent").innerHTML = `
+    <div class="checkout-grid">
+      <div class="panel">
+        <h3><span class="icon">📍</span>Delivery Address</h3>
+        <div class="address-select-list">
+          ${addrs.map((a, i) => `
+            <div class="address-card ${i === selectedAddressIndexCheckout ? "selected" : ""}" onclick="selectCheckoutAddress(${i})">
+              <div class="address-card-top">
+                <div class="address-card-radio"></div>
+                <div class="address-card-type">${escapeHTML(a.type || "Home")}</div>
+                <div class="address-card-name">${escapeHTML(a.name || "")}</div>
+              </div>
+              <div class="address-card-body">
+                ${a.phone ? `<div>📞 ${escapeHTML(a.phone)}</div>` : ""}
+                <div>${escapeHTML(a.formatted || `${a.street || ""}, ${a.city || ""}`)}</div>
+              </div>
+            </div>`).join("")}
+        </div>
+      </div>
+
+      <div class="panel">
+        <h3><span class="icon">💳</span>Payment Method</h3>
+        <div class="payment-list">${payHTML}</div>
+      </div>
+
+      ${balanceBlock}
+
+      <div class="panel">
+        <h3><span class="icon">📦</span>Order Summary</h3>
+        ${card.map(x => {
+          let p = products.find(y => y.id === x.id);
+          return p ? `<div class="sum-row"><span>${escapeHTML(p.name)} × ${x.qty}</span><strong>${money(p.price * x.qty)}</strong></div>` : "";
+        }).join("")}
+        <div class="sum-row"><span>Subtotal</span><strong>${money(subtotal)}</strong></div>
+        <div class="sum-row"><span>Delivery</span><strong>${delivery ? money(delivery) : "Free"}</strong></div>
+        ${balanceUsed > 0 ? `<div class="sum-row"><span style="color:#16a34a">Wallet Discount</span><strong style="color:#16a34a">- ${money(balanceUsed)}</strong></div>` : ""}
+        <div class="sum-row total"><span>Total</span><strong>${money(total)}</strong></div>
+        <button class="primary" style="width:100%;margin-top:15px" onclick="proceedToPayConfirm()">Place Order →</button>
+      </div>
+    </div>`;
+}
+
+function toggleUseBalance(v){ useBalance = v; renderCheckout(); }
+
+function paymentCardHTML(p){
+  let icon = (p.category === "card") ? "💳" : (p.category === "bank") ? "🏦" : "📱";
+  return `
+    <div class="payment-card ${selectedPaymentMethod === p.name ? "selected" : ""}" onclick="selectPaymentMethod('${escapeHTML(p.name)}')">
+      <div class="payment-card-radio"></div>
+      <div class="payment-icon">${icon}</div>
+      <div class="payment-info"><div class="payment-name">${escapeHTML(p.name)}</div></div>
+    </div>`;
+}
+
+function selectCheckoutAddress(i){ selectedAddressIndexCheckout = i; renderCheckout(); }
+function selectPaymentMethod(name){ selectedPaymentMethod = name; renderCheckout(); }
+
+/* ============================================================
+   PAY CONFIRM PAGE
+============================================================ */
+function proceedToPayConfirm(){
+  let addrs = getAddressesArr();
+  if(!addrs.length || !addrs[selectedAddressIndexCheckout]){ toast("Please add delivery address"); return; }
+  let a = addrs[selectedAddressIndexCheckout];
+  if(!a.street || !a.city){ toast("Selected address is incomplete. Update from Profile Settings."); return; }
+  if(!selectedPaymentMethod){ toast("Select payment method"); return; }
+
+  document.querySelectorAll("main>section").forEach(s => s.classList.add("hidden"));
+  document.getElementById("payConfirmPage").classList.remove("hidden");
+  document.getElementById("homeSearch").style.display = "none";
+  selectedPaymentOption = "full";
+  renderPayConfirm();
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+function renderPayConfirm(){
+  let subtotal = getCartSubtotal();
+  let delivery = getDeliveryCharge(subtotal);
+  let preBalance = subtotal + delivery;
+  let total = Math.max(0, preBalance - balanceUsed);
+  let addrs = getAddressesArr();
+  let a = addrs[selectedAddressIndexCheckout] || {};
+
+  document.getElementById("payConfirmContent").innerHTML = `
+    <div class="panel" style="margin-bottom:14px">
+      <h3><span class="icon">✓</span>Confirm Payment</h3>
+      <div style="font-size:13px;color:#666;line-height:1.7">
+        <div style="display:flex;justify-content:space-between;padding:6px 0"><span>Payment Method</span><strong style="color:#111">${escapeHTML(selectedPaymentMethod)}</strong></div>
+        <div style="display:flex;justify-content:space-between;padding:6px 0;gap:20px"><span>Delivery Address</span><strong style="color:#111;text-align:right;max-width:65%">${escapeHTML(a.formatted || "")}</strong></div>
+        ${balanceUsed > 0 ? `<div style="display:flex;justify-content:space-between;padding:6px 0"><span>Wallet Discount</span><strong style="color:#16a34a">- ${money(balanceUsed)}</strong></div>` : ""}
+      </div>
+    </div>
+
+    <div class="panel">
+      <h3><span class="icon">💰</span>Choose Payment Amount</h3>
+      <div class="pay-option-grid">
+        <div class="pay-option ${selectedPaymentOption === "full" ? "selected" : ""}" onclick="selectPayOption('full')">
+          <div class="pay-option-icon">💰</div>
+          <div class="pay-option-title">Full Payment</div>
+          <div class="pay-option-sub">Pay complete amount now</div>
+          <div class="pay-option-price">${money(total)}</div>
+        </div>
+        <div class="pay-option ${selectedPaymentOption === "delivery_only" ? "selected" : ""}" onclick="selectPayOption('delivery_only')">
+          <div class="pay-option-icon">🚚</div>
+          <div class="pay-option-title">Delivery Charge Only</div>
+          <div class="pay-option-sub">Pay delivery charge now, rest on delivery</div>
+          <div class="pay-option-price">${money(delivery)}</div>
+        </div>
+      </div>
+      <div style="font-size:12px;color:#777;margin-top:14px;text-align:center;line-height:1.6">
+        ${selectedPaymentOption === "full"
+          ? "You will pay the full amount via " + escapeHTML(selectedPaymentMethod)
+          : "You will pay only the delivery charge now. Rest amount pay on delivery."}
+      </div>
+      <button class="primary" style="width:100%;margin-top:18px" onclick="proceedToPaymentPage()">Next →</button>
+    </div>`;
+}
+function selectPayOption(opt){ selectedPaymentOption = opt; renderPayConfirm(); }
+
+/* ============================================================
+   PAYMENT PAGE
+============================================================ */
+function proceedToPaymentPage(){
+  let subtotal = getCartSubtotal();
+  let delivery = getDeliveryCharge(subtotal);
+  let preBalance = subtotal + delivery;
+  let total = Math.max(0, preBalance - balanceUsed);
+  let payAmount = (selectedPaymentOption === "full") ? total : delivery;
+  let method = payments.find(p => p.name === selectedPaymentMethod);
+  let account = method ? method.account : "";
+
+  let addrs = getAddressesArr();
+  let a = addrs[selectedAddressIndexCheckout] || {};
+  pendingOrderData = {
+    orderNo: "ZM-" + Date.now().toString().slice(-8),
+    userId: (load(STORAGE.account, {}) || {}).uid || "guest",
+    customerName: a.name || profile.name,
+    phone: a.phone || profile.phone,
+    email: profile.email,
+    address: a.formatted || "",
+    items: card.map(x => {
+      let p = products.find(y => y.id === x.id);
+      return { id: p.id, name: p.name, image: p.images[0] || "", qty: x.qty, price: p.price };
+    }),
+    subtotal, delivery,
+    balanceUsed: balanceUsed,
+    total,
+    preBalanceTotal: preBalance,
+    paymentMethod: selectedPaymentMethod,
+    paymentMethodCategory: method ? (method.category || "mobile") : "cod",
+    paymentOption: selectedPaymentOption,
+    paymentAmount: payAmount,
+    createdAt: Date.now(),
+    deliveryDate: Date.now() + 5 * 86400000
+  };
+
+  document.querySelectorAll("main>section").forEach(s => s.classList.add("hidden"));
+  document.getElementById("paymentPage").classList.remove("hidden");
+  document.getElementById("homeSearch").style.display = "none";
+
+  let isCOD = selectedPaymentMethod === "Cash on Delivery";
+  if(isCOD){
+    document.getElementById("paymentContent").innerHTML = `
+      <div class="panel">
+        <h3><span class="icon">💰</span>Cash on Delivery</h3>
+        <div style="text-align:center;padding:20px 0;font-size:14px;color:#666;line-height:1.7">
+          You selected Cash on Delivery.<br>Please confirm your order below.
+        </div>
+        <div class="success-meta" style="background:#fafbfc;border-radius:12px;padding:14px;font-size:13px">
+          <div style="display:flex;justify-content:space-between;padding:6px 0"><span>Order No</span><strong>${escapeHTML(pendingOrderData.orderNo)}</strong></div>
+          ${balanceUsed > 0 ? `<div style="display:flex;justify-content:space-between;padding:6px 0"><span>Wallet Discount</span><strong style="color:#16a34a">- ${money(balanceUsed)}</strong></div>` : ""}
+          <div style="display:flex;justify-content:space-between;padding:6px 0"><span>Total</span><strong>${money(pendingOrderData.total)}</strong></div>
+        </div>
+        <button class="primary" style="width:100%;margin-top:18px" onclick="submitOrder('COD')">Confirm Order</button>
+      </div>`;
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    return;
+  }
+
+  let cat = method ? (method.category || "mobile") : "mobile";
+  let typeLabel = cat === "card" ? "Card Payment" : cat === "bank" ? "Bank Transfer" : "Mobile Wallet Payment";
+  let icon = cat === "card" ? "💳" : cat === "bank" ? "🏦" : "📱";
+
+  document.getElementById("paymentContent").innerHTML = `
+    <div class="pay-info-box">
+      <div class="label">Send Money To</div>
+      <div class="number">${escapeHTML(account || "—")}</div>
+      <div class="type">${icon} ${escapeHTML(selectedPaymentMethod)}</div>
+      <div style="margin-top:12px;font-size:11px;opacity:.75">${escapeHTML(typeLabel)}</div>
+    </div>
+
+    <div class="pay-info-box" style="margin-top:12px;background:linear-gradient(135deg,#16a34a,#166534)">
+      <div class="label">Amount to Send</div>
+      <div class="number">${money(pendingOrderData.paymentAmount)}</div>
+      <div class="type">${selectedPaymentOption === "full" ? "Full Payment" : "Delivery Charge Only"}</div>
+    </div>
+
+    <div class="pay-steps">
+      <div class="pay-step"><div class="pay-step-num">1</div><div class="pay-step-text">Open your <strong>${escapeHTML(selectedPaymentMethod)}</strong> app or dial USSD code.</div></div>
+      <div class="pay-step"><div class="pay-step-num">2</div><div class="pay-step-text">Choose <strong>Send Money</strong> option (not Cash Out).</div></div>
+      <div class="pay-step"><div class="pay-step-num">3</div><div class="pay-step-text">Enter number: <strong>${escapeHTML(account || "—")}</strong> and amount: <strong>${money(pendingOrderData.paymentAmount)}</strong></div></div>
+      <div class="pay-step"><div class="pay-step-num">4</div><div class="pay-step-text">Complete the payment and copy the <strong>Transaction ID</strong>.</div></div>
+      <div class="pay-step"><div class="pay-step-num">5</div><div class="pay-step-text">Paste the Transaction ID below and submit.</div></div>
+    </div>
+
+    <div class="trx-box">
+      <label>Transaction ID *</label>
+      <input id="trxIdInput" placeholder="e.g. 8XX7N5K9Q1" maxlength="40">
+      <div style="font-size:11px;color:#999;margin-top:8px">Transaction ID must match the payment you sent.</div>
+    </div>
+
+    <button class="primary" style="width:100%;margin-top:16px;height:50px;font-size:15px" onclick="submitOrder('paid')">Submit Order ✓</button>
+  `;
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+/* ============================================================
+   SUBMIT ORDER
+============================================================ */
+async function submitOrder(mode){
+  if(!pendingOrderData){ toast("Something went wrong"); return; }
+  let trxId = "";
+  if(mode === "paid"){
+    let el = document.getElementById("trxIdInput");
+    trxId = (el ? el.value : "").trim();
+    if(!trxId){ toast("Please enter Transaction ID"); return; }
+    if(trxId.length < 4){ toast("Invalid Transaction ID"); return; }
+    pendingOrderData.transactionId = trxId.toUpperCase();
+    pendingOrderData.paymentStatus = "pending";
+  } else {
+    pendingOrderData.transactionId = "";
+    pendingOrderData.paymentStatus = "cod";
+  }
+
+  let finalOrder = {
+    ...pendingOrderData,
+    status: "Order Placed",
+    refundStatus: null,
+    refundAmount: 0,
+    notification: mode === "paid"
+      ? "Your order has been placed. Payment verification is in progress."
+      : "Your order has been placed. Pay on delivery.",
+    updatedAt: Date.now()
+  };
+
+  try {
+    if(balanceUsed > 0 && finalOrder.userId && finalOrder.userId !== "guest"){
+      let newBalance = Math.max(0, balanceAvailable - balanceUsed);
+      await db.ref("users/" + finalOrder.userId).update({ balance: newBalance, updatedAt: Date.now() });
+      finalOrder.walletUsed = balanceUsed;
+    }
+
+    await db.ref("orders").push(finalOrder);
+    card = []; save(STORAGE.card, card); updateBadge();
+    useBalance = false; balanceUsed = 0;
+
+    document.querySelectorAll("main>section").forEach(s => s.classList.add("hidden"));
+    document.getElementById("successPage").classList.remove("hidden");
+    document.getElementById("homeSearch").style.display = "none";
+
+    let payLine = "";
+    if(mode === "paid"){
+      payLine = `
+        <div><span>Payment Method</span><strong>${escapeHTML(finalOrder.paymentMethod)}</strong></div>
+        ${finalOrder.walletUsed ? `<div><span>Wallet Used</span><strong style="color:#16a34a">- ${money(finalOrder.walletUsed)}</strong></div>` : ""}
+        <div><span>Amount Paid</span><strong>${money(finalOrder.paymentAmount)}</strong></div>
+        <div><span>Transaction ID</span><strong>${escapeHTML(finalOrder.transactionId)}</strong></div>
+        <div><span>Payment Status</span><strong style="color:#f59e0b">Pending Verification</strong></div>`;
+    } else {
+      payLine = `
+        <div><span>Payment Method</span><strong>Cash on Delivery</strong></div>
+        ${finalOrder.walletUsed ? `<div><span>Wallet Used</span><strong style="color:#16a34a">- ${money(finalOrder.walletUsed)}</strong></div>` : ""}`;
+    }
+
+    document.getElementById("successContent").innerHTML = `
+      <div class="success">
+        <div class="success-icon">✓</div>
+        <h2>Order Successful</h2>
+        <div class="muted">Your order has been placed successfully.</div>
+        <div class="big-id">${escapeHTML(finalOrder.orderNo)}</div>
+        <div class="success-meta">
+          <div><span>Total</span><strong>${money(finalOrder.total)}</strong></div>
+          ${payLine}
+          <div><span>Expected Delivery</span><strong>${formatDate(finalOrder.deliveryDate)}</strong></div>
+        </div>
+        <button class="primary" style="width:100%;margin-top:20px" onclick="go('orders')">View My Order</button>
+      </div>`;
+
+    pendingOrderData = null;
+  } catch(e){ toast(e.message); }
+}
+
+/* ============================================================
+   PROFILE (with Balance)
+============================================================ */
+function renderProfile(){
+  let initial = (profile.name || "U").charAt(0).toUpperCase();
+  let addrs = getAddressesArr();
+  let addr = addrs[profile.selectedAddressIndex] ? (addrs[profile.selectedAddressIndex].formatted || "") : "No address selected";
+
+  document.getElementById("profileContent").innerHTML = `
+    <div class="profile-card">
+      <div class="profile-head">
+        <div class="avatar">${escapeHTML(initial)}</div>
+        <div>
+          <div class="profile-name">${escapeHTML(profile.name)}</div>
+          <div class="profile-email">${escapeHTML(profile.email)}</div>
+        </div>
+      </div>
+      <div class="profile-info">
+        <div class="info"><span>Name</span><span>${escapeHTML(profile.name)}</span></div>
+        <div class="info"><span>Email</span><span>${escapeHTML(profile.email)}</span></div>
+        <div class="info"><span>Phone</span><span>${escapeHTML(profile.phone)}</span></div>
+        <div class="info">
+          <span>Wallet Balance</span>
+          <span style="color:${balanceAvailable > 0 ? '#16a34a' : '#666'};font-weight:800">${money(balanceAvailable)}</span>
+        </div>
+        <div class="info"><span>Total Spend</span><span style="color:#111;font-weight:800">${money(myTotalSpend)}</span></div>
+        <div class="info"><span>Total Orders</span><span>${orders.filter(o => o.status !== "Cancelled" || isOrderVisible(o)).length}</span></div>
+        <div class="info"><span>Address</span><span>${escapeHTML(addr)}</span></div>
+      </div>
+      ${balanceAvailable > 0 ? `<div class="balance-box">
+        💰 You have <strong>${money(balanceAvailable)}</strong> in your wallet. It will be available as a discount on your next order.
+      </div>` : ""}
+    </div>
+    <div class="profile-menu">
+      <button class="menu-btn" onclick="go('orders')"><span>My Orders</span><span>›</span></button>
+      <button class="menu-btn" onclick="go('settings')"><span>Profile Settings</span><span>›</span></button>
+      <button class="menu-btn" onclick="openSupport()"><span>Support</span><span>›</span></button>
+      <button class="menu-btn" onclick="logoutUser()"><span>Logout</span><span>›</span></button>
+    </div>`;
+}
+
+/* ============================================================
+   SETTINGS
+============================================================ */
+function renderSettings(){
+  let a = profile.addresses || [];
+  let limit = a.length >= 3;
+  document.getElementById("settingsContent").innerHTML = `
+    <div class="settings-card"><h3>Phone Number</h3>
+      <div class="settings-field">
+        <div class="input-wrap"><label>Phone</label><input id="settingsPhone" value="${escapeHTML(profile.phone)}"></div>
+        <button class="update-btn" onclick="updatePhone()">Update</button>
+      </div>
+    </div>
+    <div class="settings-card"><h3>Email Address</h3>
+      <div class="settings-field">
+        <div class="input-wrap"><label>Email</label><input id="settingsEmail" type="email" value="${escapeHTML(profile.email)}"></div>
+        <button class="update-btn" onclick="updateEmail()">Update</button>
+      </div>
+    </div>
+    <div class="settings-card">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
+        <h3 style="margin:0">Addresses</h3><span class="muted">${a.length} / 3</span>
+      </div>
+      <div class="address-list">
+        ${a.map((x, i) => {
+          let selected = i === profile.selectedAddressIndex;
+          return `<div class="address-item ${selected ? "selected" : ""}" onclick="selectAddress(${i})">
+            <div class="address-radio"></div>
+            <div class="address-text">
+              <strong>${escapeHTML(x.type || "Home")}</strong>${selected ? `<span class="selected-tag">Selected</span>` : ""}
+              <div style="font-weight:600;margin-top:4px">${escapeHTML(x.name || "")}</div>
+              <div style="color:#666">${escapeHTML(x.phone || "")}</div>
+              <div style="color:#666;margin-top:3px">
+                ${escapeHTML(x.street || "")}, ${escapeHTML(x.city || "")}, ${escapeHTML(x.state || "")} - ${escapeHTML(x.zip || "")}<br>${escapeHTML(x.country || "")}
+              </div>
+              ${x.fullAddress ? `<div style="color:#666;margin-top:4px;font-style:italic">Full: ${escapeHTML(x.fullAddress)}</div>` : ""}
+            </div>
+            ${a.length > 1 ? `<button class="address-remove" onclick="event.stopPropagation();removeAddress(${i})">×</button>` : ""}
+          </div>`;
+        }).join("")}
+      </div>
+      ${limit ? `<div style="font-size:12px;color:#b42318;margin-top:8px">Maximum 3 addresses reached.</div>` : `<button class="add-address-btn" style="margin-top:12px" onclick="toggleAddressForm()">+ Add Address</button>`}
+      <div class="add-address-form" id="addressForm">
+        <h4 style="margin:0 0 12px;font-size:14px">Add New Address</h4>
+        <div class="form-grid">
+          <div class="form-group full"><label>Full Name *</label><input id="addrName"></div>
+          <div class="form-group full"><label>Phone Number *</label><input id="addrPhone"></div>
+          <div class="form-group full"><label>Full Address *</label><textarea id="addrFull" placeholder="House/Road/Area/Landmark..."></textarea></div>
+          <div class="form-group full"><label>Street Address (Short) *</label><input id="addrStreet"></div>
+          <div class="form-group"><label>City *</label><input id="addrCity"></div>
+          <div class="form-group"><label>State / Division *</label><input id="addrState"></div>
+          <div class="form-group"><label>Zip / Postal Code *</label><input id="addrZip"></div>
+          <div class="form-group"><label>Country</label><input id="addrCountry" value="Bangladesh"></div>
+          <div class="form-group full"><label>Address Type</label><select id="addrType"><option>Home</option><option>Office</option><option>Other</option></select></div>
+        </div>
+        <div style="display:flex;gap:8px;margin-top:14px">
+          <button class="update-btn" style="flex:1" onclick="addAddress()">Save Address</button>
+          <button class="secondary" style="flex:1" onclick="toggleAddressForm()">Cancel</button>
+        </div>
+      </div>
+    </div>`;
+}
+async function updatePhone(){
+  let v = document.getElementById("settingsPhone").value.trim();
+  if(!v){ toast("Enter phone number"); return; }
+  profile.phone = v; save(STORAGE.profile, profile);
+  let account = load(STORAGE.account, {});
+  if(account.uid){ await db.ref("users/" + account.uid).update({ phone: v }); }
+  toast("Phone updated");
+}
+async function updateEmail(){
+  let v = document.getElementById("settingsEmail").value.trim();
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)){ toast("Enter valid email"); return; }
+  profile.email = v; save(STORAGE.profile, profile);
+  let account = load(STORAGE.account, {});
+  if(account.uid){ await db.ref("users/" + account.uid).update({ email: v }); }
+  toast("Email updated");
+}
+function toggleAddressForm(){ let f = document.getElementById("addressForm"); if(f) f.classList.toggle("show"); }
+
+async function addAddress(){
+  let name = document.getElementById("addrName").value.trim();
+  let phone = document.getElementById("addrPhone").value.trim();
+  let fullAddress = document.getElementById("addrFull").value.trim();
+  let street = document.getElementById("addrStreet").value.trim();
+  let city = document.getElementById("addrCity").value.trim();
+  let state = document.getElementById("addrState").value.trim();
+  let zip = document.getElementById("addrZip").value.trim();
+  let country = document.getElementById("addrCountry").value.trim() || "Bangladesh";
+  let type = document.getElementById("addrType").value;
+  if(!name || !phone || !fullAddress || !street || !city || !state || !zip){ toast("Fill all required fields"); return; }
+  if(profile.addresses.length >= 3){ toast("Maximum 3 addresses"); return; }
+  profile.addresses.push({
+    id: "addr-" + Date.now(), type, name, phone, fullAddress, street, city, state, zip, country,
+    formatted: `${name}, ${street}, ${city}, ${state} ${zip}, ${country}`
+  });
+  profile.selectedAddressIndex = profile.addresses.length - 1;
+  save(STORAGE.profile, profile);
+  let account = load(STORAGE.account, {});
+  if(account.uid){
+    await db.ref("users/" + account.uid).update({
+      addresses: profile.addresses,
+      selectedAddressIndex: profile.selectedAddressIndex
+    });
+  }
+  renderSettings();
+  toast("Address added");
+}
+async function removeAddress(i){
+  if(profile.addresses.length <= 1){ toast("At least one address required"); return; }
+  profile.addresses.splice(i, 1);
+  if(profile.selectedAddressIndex >= profile.addresses.length) profile.selectedAddressIndex = profile.addresses.length - 1;
+  save(STORAGE.profile, profile);
+  let account = load(STORAGE.account, {});
+  if(account.uid){
+    await db.ref("users/" + account.uid).update({
+      addresses: profile.addresses,
+      selectedAddressIndex: profile.selectedAddressIndex
+    });
+  }
+  renderSettings();
+  toast("Address removed");
+}
+async function selectAddress(i){
+  profile.selectedAddressIndex = i;
+  save(STORAGE.profile, profile);
+  let account = load(STORAGE.account, {});
+  if(account.uid){ await db.ref("users/" + account.uid).update({ selectedAddressIndex: i }); }
+  renderSettings();
+  toast("Address selected");
+}
+
+/* ============================================================
+   SUPPORT MODAL
+============================================================ */
+function openSupport(){
+  let s = support || {};
+  document.getElementById("modalTitle").textContent = "Support";
+  document.getElementById("modalBody").innerHTML = `
+    <div style="padding:10px 0;line-height:2;font-size:13px">
+      <strong>Phone:</strong> ${escapeHTML(s.phone || "+880 1XXXXXXXXX")}<br>
+      <strong>Email:</strong> ${escapeHTML(s.email || "support@zahidmart.com")}<br>
+      <strong>WhatsApp:</strong> ${escapeHTML(s.whatsApp || s.whatsapp || "—")}<br>
+      <strong>Telegram:</strong> ${escapeHTML(s.telegram || "—")}<br>
+      <strong>Hours:</strong> ${escapeHTML(s.hours || "Sat–Thu, 10AM – 8PM")}<br>
+      <strong>Address:</strong> ${escapeHTML(s.address || "Dhaka, Bangladesh")}
+      ${s.message ? `<div style="margin-top:10px;color:#555">${escapeHTML(s.message)}</div>` : ""}
+      <button class="primary" style="width:100%;margin-top:15px" onclick="closeModal()">Close</button>
+    </div>`;
+  document.getElementById("modal").classList.add("show");
+}
+function closeModal(){ document.getElementById("modal").classList.remove("show"); }
+
+/* ============================================================
+   ORDERS
+============================================================ */
+const statusSteps = ["Order Placed", "Confirmed", "Processing", "Shipping", "Out for Delivery", "Delivered"];
+
+function statusClass(s){
+  if(s === "Order Placed") return "placed";
+  if(s === "Confirmed") return "confirmed";
+  if(s === "Processing") return "processing";
+  if(s === "Shipping") return "shipping";
+  if(s === "Out for Delivery") return "delivery";
+  if(s === "Delivered") return "delivered";
+  if(s === "Cancelled") return "cancelled";
+  return "";
+}
+function canCancel(o){
+  let s = o.status;
+  return s !== "Shipping" && s !== "Out for Delivery" && s !== "Delivered" && s !== "Cancelled";
+}
+
+function renderOrders(){
+  let visibleOrders = getVisibleOrders();
+  if(!visibleOrders.length){
+    document.getElementById("ordersContent").innerHTML = `<div class="empty"><strong>No orders yet</strong></div>`;
+    return;
+  }
+  document.getElementById("ordersContent").innerHTML = visibleOrders.map(o => {
+    let payLine = "";
+    if(o.paymentMethod && o.paymentMethod !== "Cash on Delivery" && o.transactionId){
+      payLine = `<div class="order-meta">Payment: <strong>${escapeHTML(o.paymentMethod)}</strong> · TrxID: <strong>${escapeHTML(o.transactionId)}</strong> · ${o.paymentStatus === "verified" ? "✓ Verified" : "⏳ Pending"}</div>`;
+    } else if(o.paymentMethod){
+      payLine = `<div class="order-meta">Payment: <strong>${escapeHTML(o.paymentMethod)}</strong></div>`;
+    }
+
+    let refundLine = "";
+    if(o.refundStatus === "pending"){
+      refundLine = `<div style="margin-top:10px;padding:10px;background:#fef3c7;border-radius:8px;font-size:11px;color:#92400e">⏳ Refund ${money(o.refundAmount || 0)} pending</div>`;
+    } else if(o.refundStatus === "refunded"){
+      refundLine = `<div style="margin-top:10px;padding:10px;background:#f0fdf4;border-radius:8px;font-size:11px;color:#166534">✓ Refunded ${money(o.refundAmount || 0)} to wallet</div>`;
+    }
+
+    return `
+      <div class="order-card">
+        <div class="order-head">
+          <div><div class="order-id">${escapeHTML(o.orderNo || o.id)}</div><div class="order-meta">Ordered ${formatDate(o.createdAt || o.date)}</div></div>
+          <div class="status ${statusClass(o.status)}">${escapeHTML(o.status)}</div>
+        </div>
+        ${(o.items || []).slice(0, 2).map(x => `
+          <div class="order-product">
+            <img src="${escapeHTML(x.image || "")}">
+            <div>
+              <div class="order-product-name">${escapeHTML(x.name)}</div>
+              <div class="order-product-meta">Quantity: ${x.qty} · Price: <strong>${money(x.price)}</strong></div>
+            </div>
+          </div>`).join("")}
+        ${(o.items || []).length > 2 ? `<div class="order-meta" style="margin-top:8px">+ ${(o.items || []).length - 2} more item(s)</div>` : ""}
+        ${payLine}
+        <div class="order-meta">Total: <strong>${money(o.total)}</strong></div>
+        ${refundLine}
+        <div class="order-actions">
+          <button class="order-btn view" onclick="openOrderDetail('${o.id}')">View Details</button>
+          ${canCancel(o) ? `<button class="order-btn cancel" onclick="cancelOrder('${o.id}')">Cancel Order</button>` : ""}
+        </div>
+      </div>`;
+  }).join("");
+}
+
+/* ============================================================
+   ORDER DETAILS PAGE
+============================================================ */
+function openOrderDetail(id){
+  let o = orders.find(x => x.id === id);
+  if(!o || !isOrderVisible(o)){
+    toast("This order is no longer available");
+    return;
+  }
+  currentOrderId = id;
+  document.querySelectorAll("main>section").forEach(s => s.classList.add("hidden"));
+  document.getElementById("orderDetailPage").classList.remove("hidden");
+  document.getElementById("homeSearch").style.display = "none";
+  renderOrderDetail(id);
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+function renderOrderDetail(id){
+  let o = orders.find(x => x.id === id);
+  if(!o){
+    document.getElementById("orderDetailContent").innerHTML = `<div class="empty">Order not found</div>`;
+    return;
+  }
+
+  let total = Number(o.total || 0);
+  let walletUsed = Number(o.walletUsed || o.balanceUsed || 0);
+  let paid = walletUsed;
+
+  if(o.paymentOption === "delivery_only"){
+    if(o.paymentStatus === "verified"){ paid += Number(o.paymentAmount || 0); }
+  } else if(o.paymentMethod === "Cash on Delivery"){
+    if(o.status === "Delivered"){ paid = total; }
+  } else if(o.paymentStatus === "verified"){
+    paid += Number(o.paymentAmount || 0);
+  }
+  let due = Math.max(0, total - paid);
+
+  let statusPill = `<span class="od-pill gray">${escapeHTML(o.status)}</span>`;
+  if(o.status === "Delivered") statusPill = `<span class="od-pill green">Delivered</span>`;
+  if(o.status === "Cancelled") statusPill = `<span class="od-pill red">Cancelled</span>`;
+  if(o.status === "Order Placed" || o.status === "Confirmed" || o.status === "Processing") statusPill = `<span class="od-pill amber">${escapeHTML(o.status)}</span>`;
+
+  let payBadge = "";
+  if(o.paymentMethod === "Cash on Delivery"){
+    payBadge = `<span class="od-pill gray">COD</span>`;
+  } else if(o.paymentStatus === "verified"){
+    payBadge = `<span class="od-pill green">✓ Verified</span>`;
+  } else if(o.paymentStatus === "rejected"){
+    payBadge = `<span class="od-pill red">✗ Rejected</span>`;
+  } else {
+    payBadge = `<span class="od-pill amber">⏳ Pending</span>`;
+  }
+
+  let refundBlock = "";
+  if(o.status === "Cancelled" && o.refundStatus === "pending"){
+    refundBlock = `<div style="margin-top:12px;padding:12px;background:#fef3c7;border:1px solid #fcd34d;border-radius:10px;font-size:12px;color:#92400e;line-height:1.6">
+      ⏳ Refund of <strong>${money(o.refundAmount || 0)}</strong> is pending admin approval. It will be added to your wallet once approved.
+    </div>`;
+  } else if(o.refundStatus === "refunded"){
+    refundBlock = `<div style="margin-top:12px;padding:12px;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:10px;font-size:12px;color:#166534;line-height:1.6">
+      ✓ Refund of <strong>${money(o.refundAmount || 0)}</strong> has been added to your wallet balance.
+    </div>`;
+  }
+
+  document.getElementById("orderDetailContent").innerHTML = `
+    <div class="od-panel">
+      <h3><span class="icon">📦</span>Order Info</h3>
+      <div class="od-row"><span>Order No</span><strong>${escapeHTML(o.orderNo || o.id)}</strong></div>
+      <div class="od-row"><span>Ordered On</span><strong>${formatDateTime(o.createdAt || o.date)}</strong></div>
+      <div class="od-row"><span>Status</span><span>${statusPill}</span></div>
+      <div class="od-row"><span>Expected Delivery</span><strong>${formatDate(o.deliveryDate)}</strong></div>
+    </div>
+
+    <div class="od-panel">
+      <h3><span class="icon">📍</span>Delivery Address</h3>
+      <div style="font-size:13px;color:#333;line-height:1.6">
+        <strong>${escapeHTML(o.customerName || "")}</strong><br>
+        ${escapeHTML(o.phone || "")}<br>
+        ${escapeHTML(o.address || "")}
+      </div>
+    </div>
+
+    <div class="od-panel">
+      <h3><span class="icon">💳</span>Payment Info</h3>
+      <div class="od-row"><span>Method</span><strong>${escapeHTML(o.paymentMethod || "—")}</strong></div>
+      <div class="od-row"><span>Option</span><strong>${o.paymentOption === "full" ? "Full Payment" : "Delivery Charge Only"}</strong></div>
+      ${o.transactionId ? `<div class="od-row"><span>Transaction ID</span><strong>${escapeHTML(o.transactionId)}</strong></div>` : ""}
+      <div class="od-row"><span>Payment Status</span><span>${payBadge}</span></div>
+      <div class="od-divider"></div>
+      <div class="od-row"><span>Total Amount</span><strong>${money(total)}</strong></div>
+      ${walletUsed > 0 ? `<div class="od-row"><span>Wallet Used</span><strong style="color:#16a34a">- ${money(walletUsed)}</strong></div>` : ""}
+      <div class="od-row"><span>Paid</span><strong class="od-paid">${money(paid)}</strong></div>
+      <div class="od-row"><span>Due</span><strong class="od-due">${money(due)}</strong></div>
+      <div class="od-total"><span>Grand Total</span><span>${money(total)}</span></div>
+    </div>
+
+    <div class="od-panel">
+      <h3><span class="icon">🛍️</span>Items (${(o.items || []).length})</h3>
+      ${(o.items || []).map(x => `
+        <div class="od-item">
+          <img src="${escapeHTML(x.image || "")}">
+          <div>
+            <div class="od-item-name">${escapeHTML(x.name)}</div>
+            <div class="od-item-meta">Quantity: ${x.qty} · Unit: ${money(x.price)}</div>
+          </div>
+          <div class="od-item-price">${money(Number(x.price || 0) * Number(x.qty || 1))}</div>
+        </div>`).join("")}
+    </div>
+
+    ${refundBlock}
+
+    ${o.notification ? `<div class="od-panel"><h3><span class="icon">🔔</span>Notification</h3><div style="font-size:13px;color:#555;line-height:1.6">${escapeHTML(o.notification)}</div></div>` : ""}
+
+    ${canCancel(o) ? `
+      <div style="display:flex;gap:10px;margin-bottom:14px">
+        <button class="primary" style="flex:1;background:#fff;color:#b42318;border:1px solid #fca5a5" onclick="cancelOrder('${o.id}')">Cancel Order</button>
+      </div>` : ""}
+  `;
+}
+
+/* ============================================================
+   CANCEL ORDER
+============================================================ */
+async function cancelOrder(id){
+  let o = orders.find(x => x.id === id);
+  if(!o) return;
+  if(!canCancel(o)){ toast("Order cannot be cancelled now"); return; }
+  if(!confirm("Are you sure you want to cancel this order?")) return;
+
+  let refundAmount = 0;
+  let walletUsed = Number(o.walletUsed || o.balanceUsed || 0);
+
+  if(walletUsed > 0) refundAmount += walletUsed;
+  if(o.paymentStatus === "verified" && o.paymentMethod !== "Cash on Delivery"){
+    refundAmount += Number(o.paymentAmount || 0);
+  }
+
+  let update = {
+    status: "Cancelled",
+    cancelledAt: Date.now(),
+    updatedAt: Date.now()
+  };
+
+  if(refundAmount > 0){
+    update.refundStatus = "pending";
+    update.refundAmount = refundAmount;
+    update.notification = "Your order has been cancelled. Refund of " + money(refundAmount) + " is pending admin approval.";
+  } else {
+    update.refundStatus = null;
+    update.refundAmount = 0;
+    update.notification = "Your order has been cancelled.";
+  }
+
+  try {
+    await db.ref("orders/" + id).update(update);
+    toast("Order cancelled");
+    if(currentPageNow() === "orderDetail") renderOrderDetail(id);
+    else renderOrders();
+  } catch(e){ toast(e.message); }
+}
+
+/* ============================================================
+   SLIDER
+============================================================ */
+function renderSliders(){
+  let active = sliders.filter(x => x.active !== false);
+  if(!active.length){
+    document.getElementById("slides").innerHTML = `<div class="slide active"><div style="height:100%;display:grid;place-items:center;background:#e9eaec;color:#666">No active slider</div></div>`;
+    document.getElementById("sliderDots").innerHTML = "";
+    return;
+  }
+  if(sliderIndex >= active.length) sliderIndex = 0;
+  document.getElementById("slides").innerHTML = active.map((x, i) => `
+    <div class="slide ${i === sliderIndex ? "active" : ""}">
+      <a class="slide-link" href="${escapeHTML(x.link || "#")}">
+        <img src="${escapeHTML(x.image || "")}" onerror="this.src='https://via.placeholder.com/1600x500?text=Slider'">
+      </a>
+    </div>`).join("");
+  document.getElementById("sliderDots").innerHTML = active.map((x, i) => `<button class="dot ${i === sliderIndex ? "active" : ""}" onclick="setSlide(${i})"></button>`).join("");
+}
+function setSlide(i){ let a = sliders.filter(x => x.active !== false); if(!a.length) return; sliderIndex = (i + a.length) % a.length; renderSliders(); }
+function nextSlide(){ let a = sliders.filter(x => x.active !== false); if(a.length){ sliderIndex = (sliderIndex + 1) % a.length; renderSliders(); } }
+function prevSlide(){ let a = sliders.filter(x => x.active !== false); if(a.length){ sliderIndex = (sliderIndex - 1 + a.length) % a.length; renderSliders(); } }
+function startSlider(){
+  clearInterval(sliderTimer);
+  sliderTimer = setInterval(() => {
+    let a = sliders.filter(x => x.active !== false);
+    if(a.length > 1){ sliderIndex = (sliderIndex + 1) % a.length; renderSliders(); }
+  }, 4000);
+}
+
+/* ============================================================
+   INIT
+============================================================ */
+function init(){
+  startRealtimeSync();
+  updateBadge();
+  updateFloatChatLinks();
+  if(localStorage.getItem(STORAGE.session)){
+    let account = load(STORAGE.account, null);
+    if(account){
+      profile = {
+        name: account.name || profile.name,
+        email: account.email || profile.email,
+        phone: account.phone || profile.phone,
+        addresses: profile.addresses || account.addresses || [],
+        selectedAddressIndex: profile.selectedAddressIndex ?? account.selectedAddressIndex ?? 0
+      };
+      save(STORAGE.profile, profile);
+      balanceAvailable = Number(account.balance || 0);
+      showStore();
+      if(account.uid) startUserOrdersSync(account.uid);
+    } else {
+      document.getElementById("welcomeApp").classList.remove("hidden");
+    }
+  } else {
+    document.getElementById("welcomeApp").classList.remove("hidden");
+  }
+}
+init();
+</script>
+</body>
+</html>
